@@ -1,6 +1,6 @@
 import { Heart, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { useState } from "react";
-import bgLuxury2 from "@/assets/bg-luxury-2.jpg";
+import bgShowroom from "@/assets/bg-showroom.png";
 
 interface Necklace {
   id: number; name: string; nameVi: string; price: number;
@@ -45,7 +45,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   });
 
   return (
-    <div className="rounded-2xl p-5 h-full flex flex-col relative overflow-hidden" style={{ backgroundImage: `url(${bgLuxury2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="rounded-2xl p-5 h-full flex flex-col relative overflow-hidden" style={{ backgroundImage: `url(${bgShowroom})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
       {/* Filters */}
       <div className="flex gap-2 mb-5 flex-nowrap overflow-x-auto relative z-10">
