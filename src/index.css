@@ -194,7 +194,8 @@
     pointer-events: none;
   }
 
-  .luxury-header::after {
+  .luxury-header::after,
+  .luxury-header-classic::after {
     content: '';
     position: absolute;
     inset: 0;
