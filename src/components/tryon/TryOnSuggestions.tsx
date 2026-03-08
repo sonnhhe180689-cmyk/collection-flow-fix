@@ -44,7 +44,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   });
 
   return (
-    <div className="bg-card rounded-2xl shadow-lg p-6">
+    <div className="bg-card rounded-2xl shadow-lg p-5 h-full flex flex-col">
       {/* Search + Filters */}
       <div className="flex flex-col sm:flex-row items-center gap-3 mb-6">
         <div className="relative flex-1 w-full">
