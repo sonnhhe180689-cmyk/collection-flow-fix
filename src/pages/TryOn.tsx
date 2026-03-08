@@ -21,6 +21,15 @@ const TryOn = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState<"photo" | "select" | "adjust">("photo");
+
+  const handleSelectTab = (tab: "photo" | "select" | "adjust") => {
+    setActiveTab(tab);
+    if (tab === "select") {
+      setTimeout(() => {
+        document.getElementById("suggestions-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  };
   const [selectedColor, setSelectedColor] = useState("gold");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
