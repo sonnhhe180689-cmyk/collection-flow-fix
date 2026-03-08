@@ -180,7 +180,8 @@
     overflow: hidden;
   }
 
-  .luxury-header::before {
+  .luxury-header::before,
+  .luxury-header-classic::before {
     content: '';
     position: absolute;
     inset: 0;
