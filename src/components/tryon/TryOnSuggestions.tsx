@@ -90,7 +90,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
           </button>
         )}
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 overflow-hidden">
+        <div className="grid grid-cols-2 gap-4 overflow-hidden">
           {filtered.slice(scrollOffset, scrollOffset + 4).map((n, idx) => {
             const realIdx = necklaces.indexOf(n);
             return (
