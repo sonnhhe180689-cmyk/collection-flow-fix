@@ -45,7 +45,8 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   });
 
   return (
-    <div className="luxury-card rounded-2xl p-5 h-full flex flex-col">
+    <div className="rounded-2xl p-5 h-full flex flex-col relative overflow-hidden" style={{ backgroundImage: `url(${bgLuxury1})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
       {/* Filters */}
       <div className="flex gap-2 mb-5 flex-nowrap overflow-x-auto">
         {filters.map((f) => (
