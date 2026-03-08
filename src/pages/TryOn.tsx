@@ -124,10 +124,10 @@ const TryOn = () => {
           </p>
         </div>
 
-        {/* Main area: Photo + Sidebar */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 mb-8">
+        {/* Main area: Photo + Product Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Left: Photo area */}
-          <div>
+          <div className="lg:col-span-2">
             <TryOnPhotoArea
               userImage={userImage}
               showCamera={showCamera}
@@ -151,21 +151,33 @@ const TryOn = () => {
               onSelectTab={setActiveTab}
               activeTab={activeTab}
               onSelect={handleSelectNecklace}
+              onScaleChange={setNecklaceScale}
             />
           </div>
 
-          {/* Right: Đổi Mẫu Vòng */}
-          <div className="w-full lg:w-64">
-            <TryOnSidebar
-              necklaces={necklaces}
-              favorites={favorites}
-              onSelect={handleSelectNecklace}
+          {/* Right: Product Info */}
+          <div>
+            <TryOnProductInfo
+              necklace={necklaces[selectedNecklace]}
+              selectedColor={selectedColor}
+              onSelectColor={setSelectedColor}
+              onAddToCart={handleAddToCart}
+              onSelectNecklace={() => setActiveTab("select")}
+              necklaceScale={necklaceScale}
+              onScaleChange={setNecklaceScale}
+              activeTab={activeTab}
+              onSelectTab={setActiveTab}
+              favList={necklaces.filter((n) => favorites.has(n.id))}
+              onSelectFavorite={(id) => {
+                const idx = necklaces.findIndex((n) => n.id === id);
+                if (idx >= 0) handleSelectNecklace(idx);
+              }}
             />
           </div>
         </div>
 
-        {/* Gợi Ý Cho Bạn - full width */}
-        <div className="mb-8">
+        {/* Gợi Ý + Đổi Mẫu Vòng - side by side, equal height */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <TryOnSuggestions
             necklaces={necklaces}
             selectedNecklace={selectedNecklace}
@@ -174,29 +186,12 @@ const TryOn = () => {
             onToggleFavorite={handleToggleFavorite}
             colorFilter={selectedColor}
           />
-        </div>
-
-        {/* Product Info */}
-        <div className="mb-8">
-          <TryOnProductInfo
-            necklace={necklaces[selectedNecklace]}
-            selectedColor={selectedColor}
-            onSelectColor={setSelectedColor}
-            onAddToCart={handleAddToCart}
-            onSelectNecklace={() => setActiveTab("select")}
-            necklaceScale={necklaceScale}
-            onScaleChange={setNecklaceScale}
-            activeTab={activeTab}
-            onSelectTab={setActiveTab}
-            favList={necklaces.filter((n) => favorites.has(n.id))}
-            onSelectFavorite={(id) => {
-              const idx = necklaces.findIndex((n) => n.id === id);
-              if (idx >= 0) handleSelectNecklace(idx);
-            }}
+          <TryOnSidebar
+            necklaces={necklaces}
+            favorites={favorites}
+            onSelect={handleSelectNecklace}
           />
         </div>
-
-
         {/* Tips */}
         <TryOnTips />
       </div>
