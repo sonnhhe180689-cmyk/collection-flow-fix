@@ -149,14 +149,14 @@ const Collections = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {displayedProducts.map((col) => (
-              <div key={col.id} className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer relative">
+              <div key={col.id} className="rounded-lg overflow-hidden group cursor-pointer relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style={{ background: 'hsl(40 20% 97%)', border: '1px solid hsl(40 25% 88%)' }}>
                 <div className="overflow-hidden">
                   <img src={col.image} alt={col.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
                 <div className="p-4 text-center">
                   <h3 className="font-display text-lg font-semibold">{col.name}</h3>
                   <p className="font-body text-xs text-muted-foreground">{col.nameVi}</p>
-                  <p className="font-body text-primary text-sm font-medium mt-1">{col.priceDisplay}</p>
+                  <p className="font-body text-sm font-medium mt-1" style={{ color: 'hsl(40 55% 45%)' }}>{col.priceDisplay}</p>
                   <div className="flex items-center justify-center gap-2 mt-3">
                     <button
                       onClick={() => {
