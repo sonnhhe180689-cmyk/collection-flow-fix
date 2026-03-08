@@ -12,6 +12,7 @@ interface Props {
   favorites: Set<number>;
   onSelect: (i: number) => void;
   onToggleFavorite: (id: number) => void;
+  colorFilter?: string;
 }
 
 const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, onToggleFavorite }: Props) => {
