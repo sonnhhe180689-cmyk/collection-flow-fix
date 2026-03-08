@@ -100,6 +100,31 @@ const TryOnProductInfo = ({
       >
         🛒 Thêm Vào Giỏ Hàng — {necklace.priceDisplay}
       </button>
+
+      {/* Favorites Section */}
+      {favList.length > 0 ? (
+        <div>
+          <h3 className="font-display text-lg font-bold text-foreground mb-3">Yêu Thích</h3>
+          <div className="grid grid-cols-4 gap-2">
+            {favList.slice(0, 4).map((n) => (
+              <div
+                key={n.id}
+                onClick={() => onSelectFavorite(n.id)}
+                className="cursor-pointer rounded-lg overflow-hidden bg-cream hover:shadow-md transition-shadow"
+              >
+                <img src={n.image} alt={n.nameVi} className="w-full aspect-square object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h3 className="font-display text-lg font-bold text-foreground mb-2">Yêu Thích</h3>
+          <p className="font-body text-xs text-muted-foreground text-center py-3">
+            Nhấn ❤️ để thêm vòng yêu thích
+          </p>
+        </div>
+      )}
     </div>
   );
 };
