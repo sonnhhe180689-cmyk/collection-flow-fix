@@ -1,5 +1,12 @@
 import { Camera, Sparkles, Move, Download, ShoppingCart, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import guideBg1 from "@/assets/guide-bg-1.jpg";
+import guideBg2 from "@/assets/guide-bg-2.jpg";
+import guideBg3 from "@/assets/guide-bg-3.jpg";
+import guideBg4 from "@/assets/guide-bg-4.jpg";
+import guideBg5 from "@/assets/guide-bg-5.jpg";
+
+const guideBgs = [guideBg1, guideBg2, guideBg3, guideBg4, guideBg5];
 
 const steps = [
   {
@@ -60,9 +67,20 @@ const Guide = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="space-y-8">
             {steps.map((step, i) => (
-              <div key={i} className="relative overflow-hidden bg-card rounded-xl p-8 shadow-sm transition-all duration-500 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.15)] hover:scale-[1.02] hover:border-primary/30 border border-primary/10 cursor-pointer group">
+              <div key={i} className="relative overflow-hidden rounded-xl p-8 shadow-sm transition-all duration-500 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.15)] hover:scale-[1.02] hover:border-primary/30 border border-primary/10 cursor-pointer group">
+                {/* Background image */}
+                <div className="absolute inset-0" style={{
+                  backgroundImage: `url(${guideBgs[i]})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  opacity: 0.15,
+                  transition: 'opacity 0.5s ease'
+                }} />
+                <div className="absolute inset-0 group-hover:opacity-90 opacity-95 transition-opacity duration-500" style={{
+                  background: 'linear-gradient(135deg, hsl(var(--card) / 0.95) 0%, hsl(var(--card) / 0.88) 50%, hsl(var(--card) / 0.92) 100%)'
+                }} />
                 {/* Sparkle background effect */}
-                <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-500" style={{
+                <div className="absolute inset-0 opacity-30 group-hover:opacity-60 transition-opacity duration-500" style={{
                   backgroundImage: `
                     radial-gradient(2px 2px at 15% 25%, hsl(var(--primary) / 0.5) 50%, transparent 50%),
                     radial-gradient(1.5px 1.5px at 35% 65%, hsl(var(--tiffany-light) / 0.6) 50%, transparent 50%),
@@ -77,7 +95,7 @@ const Guide = () => {
                 }} />
                 {/* Shimmer gradient overlay */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{
-                  background: 'linear-gradient(105deg, transparent 30%, hsl(var(--primary) / 0.06) 45%, hsl(var(--tiffany-light) / 0.1) 50%, hsl(var(--primary) / 0.06) 55%, transparent 70%)',
+                  background: 'linear-gradient(105deg, transparent 30%, hsl(var(--primary) / 0.08) 45%, hsl(var(--tiffany-light) / 0.12) 50%, hsl(var(--primary) / 0.08) 55%, transparent 70%)',
                   backgroundSize: '200% 100%',
                   animation: 'shimmer 2s ease-in-out infinite'
                 }} />
