@@ -15,8 +15,8 @@ const GiftSection = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="section-title">Bộ Sưu Tập Quà Tặng</h2>
-          <p className="section-subtitle">Món Quà Hoàn Hảo Cho Người Thân Yêu</p>
+          <h2 className="section-title">Quà Tặng</h2>
+          <p className="section-subtitle">Lựa Chọn 1 Món Quà Ngẫu Nhiên Dưới Đây</p>
           <p className="font-body text-sm text-muted-foreground mt-4 max-w-xl mx-auto">
             Những món quà trang sức cao cấp hoàn hảo dành tặng người thân yêu trong những dịp đặc biệt
           </p>
