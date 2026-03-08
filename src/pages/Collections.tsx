@@ -64,15 +64,16 @@ const Collections = () => {
 
   return (
     <div className="pt-16">
-      {/* Hero Banner */}
+      {/* Hero Banner - Luxury Gold */}
       <section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
         <img src={bgShowroom} alt="Bộ Sưu Tập Vòng Cổ" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-foreground/50" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, hsl(35 30% 10% / 0.7) 0%, hsl(40 25% 15% / 0.5) 50%, hsl(38 20% 12% / 0.6) 100%)' }} />
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-lg">
+              <p className="font-body text-xs tracking-[0.4em] uppercase mb-4" style={{ color: 'hsl(40 55% 65%)' }}>Exclusive Collection</p>
               <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight">
-                Vẻ Đẹp<br /><span className="italic text-primary">Vượt Thời Gian</span>
+                Vẻ Đẹp<br /><span className="italic" style={{ color: 'hsl(40 55% 60%)' }}>Vượt Thời Gian</span>
               </h1>
               <p className="font-body text-sm md:text-base text-primary-foreground/80 mt-4 leading-relaxed max-w-md">
                 Khám phá bộ sưu tập vòng cổ cao cấp được chế tác tinh xảo. Thử trực tiếp trên ảnh của bạn với công nghệ AR 2D hiện đại.
@@ -83,11 +84,11 @@ const Collections = () => {
                 </button>
               </Link>
             </div>
-            {/* Transparent Necklace Collections circle */}
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 backdrop-blur-md flex flex-col items-center justify-center text-center shadow-[0_0_40px_rgba(255,255,255,0.1),inset_0_0_30px_rgba(255,255,255,0.05)]">
-              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight drop-shadow-lg"><span className="text-primary-foreground">Necklace</span><br /><span className="text-primary">Collections</span></h3>
+            {/* Gold Necklace Collections circle */}
+            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full flex flex-col items-center justify-center text-center" style={{ border: '1px solid hsl(40 50% 50% / 0.3)', background: 'hsl(40 30% 20% / 0.3)', backdropFilter: 'blur(12px)', boxShadow: '0 0 40px hsl(40 50% 50% / 0.1), inset 0 0 30px hsl(40 50% 50% / 0.05)' }}>
+              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight drop-shadow-lg"><span className="text-primary-foreground">Necklace</span><br /><span style={{ color: 'hsl(40 55% 60%)' }}>Collections</span></h3>
               <p className="font-body text-xs text-primary-foreground/70 mt-1 tracking-wider uppercase">Bộ Sưu Tập Vòng Cổ</p>
-              <button onClick={() => document.getElementById('collections-grid')?.scrollIntoView({ behavior: 'smooth' })} className="mt-3 px-5 py-2 text-[10px] font-body font-medium tracking-wider text-white rounded-full bg-gradient-to-r from-[hsl(170,45%,55%)] to-[hsl(185,50%,60%)] hover:from-[hsl(170,45%,50%)] hover:to-[hsl(185,50%,55%)] shadow-md hover:shadow-lg transition-all flex items-center gap-1">
+              <button onClick={() => document.getElementById('collections-grid')?.scrollIntoView({ behavior: 'smooth' })} className="mt-3 px-5 py-2 text-[10px] font-body font-medium tracking-wider text-white rounded-full shadow-md hover:shadow-lg transition-all flex items-center gap-1" style={{ background: 'linear-gradient(135deg, hsl(40 50% 40%), hsl(40 55% 55%))' }}>
                 Xem Chi Tiết <ArrowRight className="w-3 h-3" />
               </button>
             </div>
@@ -96,15 +97,15 @@ const Collections = () => {
         <div className="absolute bottom-8 left-0 right-0">
           <div className="container mx-auto px-4 md:px-16 flex gap-12">
             <div>
-              <p className="font-display text-2xl md:text-3xl font-bold text-primary">24/7</p>
+              <p className="font-display text-2xl md:text-3xl font-bold" style={{ color: 'hsl(40 55% 60%)' }}>24/7</p>
               <p className="font-body text-xs text-primary-foreground/70">Hỗ Trợ Khách Hàng</p>
             </div>
             <div>
-              <p className="font-display text-2xl md:text-3xl font-bold text-primary">7 Ngày</p>
+              <p className="font-display text-2xl md:text-3xl font-bold" style={{ color: 'hsl(40 55% 60%)' }}>7 Ngày</p>
               <p className="font-body text-xs text-primary-foreground/70">Miễn Phí Đổi Trả</p>
             </div>
             <div>
-              <p className="font-display text-2xl md:text-3xl font-bold text-primary">5<Star className="w-4 h-4 inline text-primary ml-0.5 -mt-1" /></p>
+              <p className="font-display text-2xl md:text-3xl font-bold" style={{ color: 'hsl(40 55% 60%)' }}>5<Star className="w-4 h-4 inline ml-0.5 -mt-1" style={{ color: 'hsl(40 55% 60%)' }} /></p>
               <p className="font-body text-xs text-primary-foreground/70">Đánh Giá</p>
             </div>
           </div>
