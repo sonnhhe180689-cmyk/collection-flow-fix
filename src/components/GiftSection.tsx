@@ -15,7 +15,7 @@ const GiftSection = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="section-title">Quà Tặng</h2>
+          <h2 className="section-title">Quà Tặng Tri Ân Khách Hàng</h2>
           <p className="section-subtitle">Lựa Chọn 1 Món Quà Ngẫu Nhiên Dưới Đây</p>
           <p className="font-body text-sm text-muted-foreground mt-4 max-w-xl mx-auto">
             Tặng kèm 1 món quà nhỏ thay lời cảm ơn của Luna Jewel dành tới các khách hàng
