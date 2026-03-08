@@ -44,7 +44,7 @@ const faqs = [
 const Guide = () => {
   return (
     <div className="pt-16">
-      <section className="py-16 bg-cream">
+      <section className="py-16 luxury-header">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold">
             Hướng Dẫn <span className="text-primary italic">Sử Dụng</span>
