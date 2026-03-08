@@ -1,5 +1,6 @@
-import { Heart, ChevronLeft, ChevronRight, Sparkles, Search } from "lucide-react";
+import { Heart, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { useState } from "react";
+import bgLuxury1 from "@/assets/bg-luxury-1.jpg";
 
 interface Necklace {
   id: number; name: string; nameVi: string; price: number;
@@ -44,9 +45,10 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   });
 
   return (
-    <div className="luxury-card rounded-2xl p-5 h-full flex flex-col">
+    <div className="rounded-2xl p-5 h-full flex flex-col relative overflow-hidden" style={{ backgroundImage: `url(${bgLuxury1})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
       {/* Filters */}
-      <div className="flex gap-2 mb-5 flex-nowrap overflow-x-auto">
+      <div className="flex gap-2 mb-5 flex-nowrap overflow-x-auto relative z-10">
         {filters.map((f) => (
           <button
             key={f.key}
@@ -62,13 +64,13 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-2 mb-6">
+      <div className="flex items-center justify-center gap-2 mb-6 relative z-10">
         <Sparkles className="w-4 h-4 text-primary" />
         <h3 className="font-display text-xl font-bold text-foreground italic">Gợi Ý Cho Bạn</h3>
         <Sparkles className="w-4 h-4 text-primary" />
       </div>
 
-      <div className="relative flex-1">
+      <div className="relative flex-1 z-10">
         {scrollOffset > 0 && (
           <button
             onClick={() => setScrollOffset(Math.max(0, scrollOffset - 1))}
