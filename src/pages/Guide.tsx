@@ -81,7 +81,7 @@ const Guide = () => {
                   backgroundSize: '200% 100%',
                   animation: 'shimmer 2s ease-in-out infinite'
                 }} />
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 relative z-10">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110 group-hover:shadow-[0_0_15px_hsl(var(--primary)/0.3)]">
                     {step.icon}
                   </div>
