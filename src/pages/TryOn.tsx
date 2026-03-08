@@ -179,7 +179,7 @@ const TryOn = () => {
               selectedColor={selectedColor}
               onSelectColor={setSelectedColor}
               onAddToCart={handleAddToCart}
-              onSelectNecklace={() => setActiveTab("select")}
+              onSelectNecklace={() => handleSelectTab("select")}
               necklaceScale={necklaceScale}
               necklaceRotation={necklaceRotation}
               necklaceOpacity={necklaceOpacity}
