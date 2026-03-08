@@ -130,10 +130,10 @@ const TryOn = () => {
         {/* Header */}
         <div className="text-center mb-10 luxury-header rounded-2xl py-14 px-4">
           <h1 className="relative z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
-            <span className="block font-display text-4xl md:text-5xl font-bold text-foreground">Thử Vòng Cổ</span>
+            <span className="block font-display text-4xl md:text-5xl font-bold text-white">Thử Vòng Cổ</span>
             <span className="block font-display text-5xl md:text-6xl font-bold italic text-primary mt-1" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.25)' }}>Trực Tuyến</span>
           </h1>
-          <p className="font-body text-card-foreground/80 mt-4 relative z-10 text-base md:text-lg max-w-xl mx-auto" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.2)' }}>
+          <p className="font-body text-white/80 mt-4 relative z-10 text-base md:text-lg max-w-xl mx-auto" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.2)' }}>
             Tải ảnh của bạn lên và xem thử các mẫu vòng cổ yêu thích ngay trên màn hình
           </p>
         </div>

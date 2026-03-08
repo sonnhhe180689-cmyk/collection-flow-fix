@@ -47,10 +47,10 @@ const Guide = () => {
       <section className="py-16 luxury-header">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
-            <span className="block font-display text-4xl md:text-5xl font-bold text-foreground">Hướng Dẫn</span>
+            <span className="block font-display text-4xl md:text-5xl font-bold text-white">Hướng Dẫn</span>
             <span className="block font-display text-5xl md:text-6xl font-bold italic text-primary mt-1" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.25)' }}>Sử Dụng</span>
           </h1>
-          <p className="font-body text-card-foreground/80 mt-4 text-base md:text-lg max-w-2xl mx-auto" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.2)' }}>
+          <p className="font-body text-white/80 mt-4 text-base md:text-lg max-w-2xl mx-auto" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.2)' }}>
             Hướng dẫn chi tiết cách sử dụng tính năng thử vòng cổ trực tuyến và đặt hàng tại Luna Jewel
           </p>
         </div>
