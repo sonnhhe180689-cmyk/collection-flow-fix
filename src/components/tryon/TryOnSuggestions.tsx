@@ -1,4 +1,4 @@
-import { Heart, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { Heart, ChevronLeft, ChevronRight, Sparkles, Search } from "lucide-react";
 import { useState } from "react";
 
 interface Necklace {
@@ -18,8 +18,54 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   const [scrollOffset, setScrollOffset] = useState(0);
   const maxScroll = Math.max(0, necklaces.length - 4);
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const filters = [
+    { key: "all", label: "Tất Cả" },
+    { key: "diamond", label: "Cổ Điển" },
+    { key: "luxury", label: "Cao Cấp" },
+    { key: "gold", label: "Hiện Đại" },
+    { key: "pearl", label: "Đá Quý" },
+  ];
+
+  const filtered = necklaces.filter((n) => {
+    const matchSearch = !searchQuery || n.nameVi.toLowerCase().includes(searchQuery.toLowerCase()) || n.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchFilter = activeFilter === "all" || n.category === activeFilter;
+    return matchSearch && matchFilter;
+  });
+
   return (
     <div className="bg-card rounded-2xl shadow-lg p-6">
+      {/* Search + Filters */}
+      <div className="flex flex-col sm:flex-row items-center gap-3 mb-6">
+        <div className="relative flex-1 w-full">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <input
+            type="text"
+            placeholder="Tìm kiếm vòng cổ..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-10 pr-4 py-2.5 rounded-full border border-border bg-background font-body text-sm focus:outline-none focus:border-primary/50 transition-colors"
+          />
+        </div>
+        <div className="flex gap-2 flex-wrap">
+          {filters.map((f) => (
+            <button
+              key={f.key}
+              onClick={() => setActiveFilter(f.key)}
+              className={`px-4 py-2 rounded-full font-body text-sm font-medium transition-all ${
+                activeFilter === f.key
+                  ? "gradient-tiffany text-primary-foreground shadow-sm"
+                  : "bg-secondary text-foreground hover:bg-accent"
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div className="flex items-center justify-center gap-2 mb-6">
         <Sparkles className="w-4 h-4 text-primary" />
         <h3 className="font-display text-xl font-bold text-foreground italic">Gợi Ý Cho Bạn</h3>
@@ -37,8 +83,8 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
         )}
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 overflow-hidden">
-          {necklaces.slice(scrollOffset, scrollOffset + 4).map((n, idx) => {
-            const realIdx = scrollOffset + idx;
+          {filtered.slice(scrollOffset, scrollOffset + 4).map((n, idx) => {
+            const realIdx = necklaces.indexOf(n);
             return (
               <div
                 key={n.id}

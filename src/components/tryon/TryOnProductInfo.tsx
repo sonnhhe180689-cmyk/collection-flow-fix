@@ -1,5 +1,9 @@
 import { Star, SlidersHorizontal } from "lucide-react";
 
+interface FavNecklace {
+  id: number; nameVi: string; image: string;
+}
+
 interface Props {
   necklace: { nameVi: string; priceDisplay: string; image: string; category: string };
   selectedColor: string;
@@ -10,6 +14,8 @@ interface Props {
   onScaleChange: (s: number) => void;
   activeTab: "photo" | "select" | "adjust";
   onSelectTab: (tab: "photo" | "select" | "adjust") => void;
+  favList: FavNecklace[];
+  onSelectFavorite: (id: number) => void;
 }
 
 const colors = [
@@ -21,6 +27,7 @@ const colors = [
 const TryOnProductInfo = ({
   necklace, selectedColor, onSelectColor, onAddToCart,
   onSelectNecklace, necklaceScale, onScaleChange, activeTab, onSelectTab,
+  favList, onSelectFavorite,
 }: Props) => {
   return (
     <div className="bg-card rounded-2xl shadow-lg p-6 space-y-5">
@@ -100,6 +107,31 @@ const TryOnProductInfo = ({
       >
         🛒 Thêm Vào Giỏ Hàng — {necklace.priceDisplay}
       </button>
+
+      {/* Favorites Section */}
+      {favList.length > 0 ? (
+        <div>
+          <h3 className="font-display text-lg font-bold text-foreground mb-3">Yêu Thích</h3>
+          <div className="grid grid-cols-4 gap-2">
+            {favList.slice(0, 4).map((n) => (
+              <div
+                key={n.id}
+                onClick={() => onSelectFavorite(n.id)}
+                className="cursor-pointer rounded-lg overflow-hidden bg-cream hover:shadow-md transition-shadow"
+              >
+                <img src={n.image} alt={n.nameVi} className="w-full aspect-square object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h3 className="font-display text-lg font-bold text-foreground mb-2">Yêu Thích</h3>
+          <p className="font-body text-xs text-muted-foreground text-center py-3">
+            Nhấn ❤️ để thêm vòng yêu thích
+          </p>
+        </div>
+      )}
     </div>
   );
 };

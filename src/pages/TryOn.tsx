@@ -116,6 +116,16 @@ const TryOn = () => {
   return (
     <div className="pt-16 min-h-screen" style={{ background: "linear-gradient(180deg, hsl(174 30% 95%) 0%, hsl(180 20% 99%) 100%)" }}>
       <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground">
+            Thử Vòng Cổ <span className="italic text-primary">Trực Tuyến</span>
+          </h1>
+          <p className="font-body text-muted-foreground mt-3">
+            Tải ảnh của bạn lên và xem thử các mẫu vòng cổ yêu thích ngay trên màn hình
+          </p>
+        </div>
+
         {/* Main area: Photo + Product Info */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Left: Photo area */}
@@ -155,6 +165,11 @@ const TryOn = () => {
               onScaleChange={setNecklaceScale}
               activeTab={activeTab}
               onSelectTab={setActiveTab}
+              favList={necklaces.filter((n) => favorites.has(n.id))}
+              onSelectFavorite={(id) => {
+                const idx = necklaces.findIndex((n) => n.id === id);
+                if (idx >= 0) handleSelectNecklace(idx);
+              }}
             />
           </div>
         </div>
