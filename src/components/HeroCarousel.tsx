@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
@@ -43,6 +43,7 @@ const HeroCarousel = () => {
   }, []);
 
   const next = useCallback(() => goTo((current + 1) % slides.length), [current, goTo]);
+  const prev = useCallback(() => goTo((current - 1 + slides.length) % slides.length), [current, goTo]);
 
   useEffect(() => {
     const timer = setInterval(next, 5000);
@@ -66,7 +67,7 @@ const HeroCarousel = () => {
         </div>
       ))}
 
-      {/* Text overlay on image */}
+      {/* Text overlay */}
       <div className="absolute inset-0 flex items-center">
         <div className="container mx-auto px-4 md:px-16">
           <div
@@ -92,6 +93,20 @@ const HeroCarousel = () => {
           </div>
         </div>
       </div>
+
+      {/* Arrow navigation */}
+      <button
+        onClick={prev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/30 backdrop-blur-sm flex items-center justify-center hover:bg-background/50 transition-colors z-10"
+      >
+        <ChevronLeft className="w-6 h-6 text-primary-foreground" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/30 backdrop-blur-sm flex items-center justify-center hover:bg-background/50 transition-colors z-10"
+      >
+        <ChevronRight className="w-6 h-6 text-primary-foreground" />
+      </button>
 
       {/* Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
