@@ -37,7 +37,7 @@ const TryOnProductInfo = ({
 }: Props) => {
   return (
     <div className="rounded-2xl p-6 space-y-5 relative overflow-hidden" style={{ backgroundImage: `url(${bgShowroom})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="absolute inset-0 bg-card/50" />
+      <div className="absolute inset-0 bg-card/75 backdrop-blur-[2px]" />
       <div className="relative z-10 space-y-5">
       {/* Product Name + Badge */}
       <div>
