@@ -92,9 +92,6 @@ const TryOnPhotoArea = ({
 
             {/* Bottom buttons on photo */}
             <div className="absolute bottom-4 left-4 right-4 flex justify-center gap-3">
-              <button onClick={onReset} className="bg-card/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 text-sm font-body font-medium text-foreground shadow-md hover:bg-card transition-colors">
-                <Camera className="w-4 h-4" /> Chụp Lại
-              </button>
               <button onClick={() => onSelectTab("select")} className="bg-card/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 text-sm font-body font-medium text-foreground shadow-md hover:bg-card transition-colors">
                 <Search className="w-4 h-4" /> Chọn Vòng
               </button>
@@ -104,7 +101,7 @@ const TryOnPhotoArea = ({
       </div>
 
       {/* Step Tabs */}
-      <div className="flex gap-3">
+      <div className="flex gap-3 flex-wrap">
         {[
           { key: "photo" as const, icon: <Camera className="w-4 h-4" />, label: "Chụp Ảnh" },
           { key: "select" as const, icon: <Search className="w-4 h-4" />, label: "Chọn Vòng" },
@@ -122,6 +119,14 @@ const TryOnPhotoArea = ({
             {tab.icon} {tab.label}
           </button>
         ))}
+        {userImage && (
+          <button
+            onClick={onReset}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full font-body text-sm font-medium bg-card text-foreground border border-border hover:border-destructive/30 hover:text-destructive transition-all"
+          >
+            <Camera className="w-4 h-4" /> Chụp Lại
+          </button>
+        )}
       </div>
     </div>
   );

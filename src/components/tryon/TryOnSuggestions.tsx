@@ -12,9 +12,16 @@ interface Props {
   favorites: Set<number>;
   onSelect: (i: number) => void;
   onToggleFavorite: (id: number) => void;
+  colorFilter?: string;
 }
 
-const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, onToggleFavorite }: Props) => {
+const colorCategoryMap: Record<string, string[]> = {
+  gold: ["gold", "luxury"],
+  silver: ["silver", "diamond"],
+  rosegold: ["rosegold", "pearl"],
+};
+
+const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, onToggleFavorite, colorFilter }: Props) => {
   const [scrollOffset, setScrollOffset] = useState(0);
   const maxScroll = Math.max(0, necklaces.length - 4);
 
@@ -32,7 +39,8 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   const filtered = necklaces.filter((n) => {
     const matchSearch = !searchQuery || n.nameVi.toLowerCase().includes(searchQuery.toLowerCase()) || n.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchFilter = activeFilter === "all" || n.category === activeFilter;
-    return matchSearch && matchFilter;
+    const matchColor = !colorFilter || colorCategoryMap[colorFilter]?.includes(n.category);
+    return matchSearch && matchFilter && matchColor;
   });
 
   return (

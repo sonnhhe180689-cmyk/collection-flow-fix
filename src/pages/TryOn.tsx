@@ -171,24 +171,25 @@ const TryOn = () => {
           </div>
         </div>
 
-        {/* Bottom: Suggestions + Sidebar */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <div className="lg:col-span-2">
-            <TryOnSuggestions
-              necklaces={necklaces}
-              selectedNecklace={selectedNecklace}
-              favorites={favorites}
-              onSelect={handleSelectNecklace}
-              onToggleFavorite={handleToggleFavorite}
-            />
-          </div>
-          <div>
-            <TryOnSidebar
-              necklaces={necklaces}
-              favorites={favorites}
-              onSelect={handleSelectNecklace}
-            />
-          </div>
+        {/* Bottom: Suggestions */}
+        <div className="mb-8">
+          <TryOnSuggestions
+            necklaces={necklaces}
+            selectedNecklace={selectedNecklace}
+            favorites={favorites}
+            onSelect={handleSelectNecklace}
+            onToggleFavorite={handleToggleFavorite}
+            colorFilter={selectedColor}
+          />
+        </div>
+
+        {/* Đổi Mẫu Vòng - full width */}
+        <div className="mb-8">
+          <TryOnSidebar
+            necklaces={necklaces}
+            favorites={favorites}
+            onSelect={handleSelectNecklace}
+          />
         </div>
 
         {/* Tips */}

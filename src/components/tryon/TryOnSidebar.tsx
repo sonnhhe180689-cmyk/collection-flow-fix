@@ -1,4 +1,10 @@
-import { ChevronRight } from "lucide-react";
+import { Heart } from "lucide-react";
+import gift1 from "@/assets/gift-1.jpg";
+import gift2 from "@/assets/gift-2.jpg";
+import gift3 from "@/assets/gift-3.jpg";
+import gift4 from "@/assets/gift-4.jpg";
+import craftsmanship from "@/assets/craftsmanship.jpg";
+import luxuryShowroom from "@/assets/luxury-showroom.jpg";
 
 interface Necklace {
   id: number; name: string; nameVi: string; price: number;
@@ -11,26 +17,31 @@ interface Props {
   onSelect: (i: number) => void;
 }
 
+const extraModels = [
+  { id: 101, name: "Vòng Cổ Ngọc Bích", image: gift1 },
+  { id: 102, name: "Vòng Cổ Hổ Phách", image: gift2 },
+  { id: 103, name: "Vòng Cổ Thạch Anh", image: gift3 },
+  { id: 104, name: "Vòng Cổ Pha Lê", image: gift4 },
+  { id: 105, name: "Vòng Cổ Emerald", image: craftsmanship },
+  { id: 106, name: "Vòng Cổ Platinum", image: luxuryShowroom },
+];
+
 const TryOnSidebar = ({ necklaces, favorites, onSelect }: Props) => {
-  const favList = necklaces.filter((n) => favorites.has(n.id));
-
   return (
-    <div className="space-y-6">
-
-      {/* Đổi Mẫu Vòng */}
-      <div className="bg-card rounded-2xl shadow-lg p-5">
-        <h3 className="font-display text-lg font-bold text-foreground mb-4">Đổi Mẫu Vòng</h3>
-        <div className="grid grid-cols-3 gap-2">
-          {necklaces.map((n, i) => (
-            <div
-              key={n.id}
-              onClick={() => onSelect(i)}
-              className="cursor-pointer rounded-lg overflow-hidden bg-cream hover:shadow-md transition-all hover:scale-105"
-            >
-              <img src={n.image} alt={n.nameVi} className="w-full aspect-square object-cover" />
+    <div className="bg-card rounded-2xl shadow-lg p-6">
+      <h3 className="font-display text-xl font-bold text-foreground mb-5">Đổi Mẫu Vòng</h3>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+        {extraModels.map((m) => (
+          <div
+            key={m.id}
+            className="cursor-pointer rounded-xl overflow-hidden bg-cream hover:shadow-lg transition-all hover:scale-105 group"
+          >
+            <div className="aspect-square overflow-hidden">
+              <img src={m.image} alt={m.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
             </div>
-          ))}
-        </div>
+            <p className="font-body text-xs font-medium text-foreground text-center py-2 truncate px-1">{m.name}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
