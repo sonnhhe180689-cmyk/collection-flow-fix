@@ -70,7 +70,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
         <Sparkles className="w-4 h-4 text-primary" />
       </div>
 
-      <div className="relative flex-1">
+      <div className="relative flex-1 z-10">
         {scrollOffset > 0 && (
           <button
             onClick={() => setScrollOffset(Math.max(0, scrollOffset - 1))}

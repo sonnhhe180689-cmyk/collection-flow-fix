@@ -29,9 +29,10 @@ const extraModels = [
 
 const TryOnSidebar = ({ necklaces, favorites, onSelect }: Props) => {
   return (
-    <div className="luxury-card rounded-2xl p-5 h-full">
-      <h3 className="font-display text-xl font-bold text-foreground mb-4">Đổi Mẫu Vòng</h3>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+    <div className="rounded-2xl p-5 h-full relative overflow-hidden" style={{ backgroundImage: `url(${bgLuxury2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="absolute inset-0 bg-card/85 backdrop-blur-sm" />
+      <h3 className="font-display text-xl font-bold text-foreground mb-4 relative z-10">Đổi Mẫu Vòng</h3>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 relative z-10">
         {extraModels.map((m) => (
           <div
             key={m.id}

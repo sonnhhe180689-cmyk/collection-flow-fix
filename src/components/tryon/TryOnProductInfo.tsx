@@ -36,7 +36,8 @@ const TryOnProductInfo = ({
   favList, onSelectFavorite,
 }: Props) => {
   return (
-    <div className="luxury-card-gold rounded-2xl p-6 space-y-5">
+    <div className="rounded-2xl p-6 space-y-5 relative overflow-hidden" style={{ backgroundImage: `url(${bgLuxury3})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="absolute inset-0 bg-card/80 backdrop-blur-sm" />
       {/* Product Name + Badge */}
       <div>
         <div className="flex items-start justify-between gap-2">
