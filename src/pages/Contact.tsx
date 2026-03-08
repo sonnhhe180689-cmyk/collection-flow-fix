@@ -67,9 +67,9 @@ const Contact = () => {
       </section>
 
       <section className="relative">
-        <a href="https://maps.google.com/?q=21.0124,105.5257" target="_blank" rel="noopener noreferrer" className="absolute top-4 left-4 z-10 bg-background px-4 py-2 rounded-md shadow-md font-body text-sm hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-1">
-          Mở trong Maps ↗
-        </a>
+        <div className="absolute top-4 left-4 z-10 bg-background px-4 py-2 rounded-md shadow-md font-body text-sm flex items-center gap-1">
+          <MapPin className="w-4 h-4 text-primary" /> Đại học FPT, Hòa Lạc
+        </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.7!2d105.5225!3d21.0124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abc60e7d3f19%3A0x2be9d7d0b5abcbf4!2sFPT%20University!5e0!3m2!1svi!2svn!4v1700000000000!5m2!1svi!2svn" width="100%" height="400" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Luna Jewel Location" />
       </section>
     </div>
