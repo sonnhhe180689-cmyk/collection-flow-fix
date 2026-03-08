@@ -128,11 +128,12 @@ const TryOn = () => {
     <div className="pt-16 min-h-screen" style={{ background: "linear-gradient(180deg, hsl(174 30% 95%) 0%, hsl(180 20% 99%) 100%)" }}>
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-10 luxury-header rounded-2xl py-12 px-4">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground relative z-10">
-            Thử Vòng Cổ <span className="italic text-primary">Trực Tuyến</span>
+        <div className="text-center mb-10 luxury-header rounded-2xl py-14 px-4">
+          <h1 className="relative z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
+            <span className="block font-display text-4xl md:text-5xl font-bold text-foreground">Thử Vòng Cổ</span>
+            <span className="block font-display text-5xl md:text-6xl font-bold italic text-primary mt-1" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.25)' }}>Trực Tuyến</span>
           </h1>
-          <p className="font-body text-muted-foreground mt-3 relative z-10">
+          <p className="font-body text-card-foreground/80 mt-4 relative z-10 text-base md:text-lg max-w-xl mx-auto" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.2)' }}>
             Tải ảnh của bạn lên và xem thử các mẫu vòng cổ yêu thích ngay trên màn hình
           </p>
         </div>
