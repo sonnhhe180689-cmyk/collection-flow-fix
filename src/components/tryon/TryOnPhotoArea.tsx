@@ -27,6 +27,8 @@ interface Props {
   activeTab: "photo" | "select" | "adjust";
   onSelect: (i: number) => void;
   onScaleChange: (s: number) => void;
+  onRotationChange: (r: number) => void;
+  onOpacityChange: (o: number) => void;
 }
 
 const TryOnPhotoArea = ({
