@@ -61,33 +61,8 @@ const HeroCarousel = () => {
           }}
         >
           <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-          <div className="hero-overlay absolute inset-0" />
         </div>
       ))}
-
-      <div className="absolute inset-0 flex items-center">
-        <div className="container mx-auto px-4 md:px-16">
-          <div
-            className="max-w-lg"
-            style={{
-              opacity: isTransitioning ? 0 : 1,
-              transform: isTransitioning ? "translateY(20px)" : "translateY(0)",
-              transition: "opacity 0.5s ease, transform 0.5s ease",
-              transitionDelay: "0.2s",
-            }}
-          >
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight whitespace-pre-line">
-              {slides[current].title}
-            </h1>
-            <p className="font-heading text-lg md:text-xl text-primary-foreground/90 mt-4 italic">
-              {slides[current].subtitle}
-            </p>
-            <button className="btn-gold mt-8 text-sm" onClick={() => navigate(slides[current].link)}>
-              {slides[current].cta}
-            </button>
-          </div>
-        </div>
-      </div>
 
       <button
         onClick={prev}
