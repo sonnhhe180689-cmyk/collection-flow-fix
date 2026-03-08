@@ -64,7 +64,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-2 mb-6">
+      <div className="flex items-center justify-center gap-2 mb-6 relative z-10">
         <Sparkles className="w-4 h-4 text-primary" />
         <h3 className="font-display text-xl font-bold text-foreground italic">Gợi Ý Cho Bạn</h3>
         <Sparkles className="w-4 h-4 text-primary" />
