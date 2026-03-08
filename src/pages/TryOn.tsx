@@ -6,7 +6,7 @@ import { toast } from "@/hooks/use-toast";
 import { useState, useRef } from "react";
 import TryOnPhotoArea from "@/components/tryon/TryOnPhotoArea";
 import TryOnProductInfo from "@/components/tryon/TryOnProductInfo";
-import TryOnSuggestions from "@/components/tryon/TryOnSuggestions";
+
 import TryOnSidebar from "@/components/tryon/TryOnSidebar";
 import TryOnTips from "@/components/tryon/TryOnTips";
 
@@ -137,6 +137,8 @@ const TryOn = () => {
               necklacePos={necklacePos}
               necklaceScale={necklaceScale}
               isDragging={isDragging}
+              favorites={favorites}
+              onToggleFavorite={handleToggleFavorite}
               onFileUpload={handleFileUpload}
               onOpenCamera={handleOpenCamera}
               onCapture={handleCapture}
@@ -147,6 +149,7 @@ const TryOn = () => {
               onReset={handleReset}
               onSelectTab={setActiveTab}
               activeTab={activeTab}
+              onSelect={handleSelectNecklace}
             />
           </div>
 
@@ -171,17 +174,6 @@ const TryOn = () => {
           </div>
         </div>
 
-        {/* Bottom: Suggestions */}
-        <div className="mb-8">
-          <TryOnSuggestions
-            necklaces={necklaces}
-            selectedNecklace={selectedNecklace}
-            favorites={favorites}
-            onSelect={handleSelectNecklace}
-            onToggleFavorite={handleToggleFavorite}
-            colorFilter={selectedColor}
-          />
-        </div>
 
         {/* Đổi Mẫu Vòng - full width */}
         <div className="mb-8">

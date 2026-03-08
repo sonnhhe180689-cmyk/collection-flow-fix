@@ -1,4 +1,4 @@
-import { Camera, RotateCcw, Search, Upload } from "lucide-react";
+import { Camera, Heart, RotateCcw, Search, Sparkles, Upload } from "lucide-react";
 import { RefObject } from "react";
 
 interface Props {
@@ -6,8 +6,10 @@ interface Props {
   showCamera: boolean;
   videoRef: RefObject<HTMLVideoElement>;
   fileInputRef: RefObject<HTMLInputElement>;
-  necklaces: { image: string; nameVi: string }[];
+  necklaces: { id: number; image: string; name: string; nameVi: string; priceDisplay: string; category: string }[];
   selectedNecklace: number;
+  favorites: Set<number>;
+  onToggleFavorite: (id: number) => void;
   necklacePos: { x: number; y: number };
   necklaceScale: number;
   isDragging: boolean;
@@ -21,19 +23,61 @@ interface Props {
   onReset: () => void;
   onSelectTab: (tab: "photo" | "select" | "adjust") => void;
   activeTab: "photo" | "select" | "adjust";
+  onSelect: (i: number) => void;
 }
 
 const TryOnPhotoArea = ({
   userImage, showCamera, videoRef, fileInputRef, necklaces, selectedNecklace,
-  necklacePos, necklaceScale, isDragging,
+  necklacePos, necklaceScale, isDragging, favorites, onToggleFavorite,
   onOpenCamera, onCapture, onStopCamera,
-  onMouseDown, onMouseMove, onMouseUp, onReset, onSelectTab, activeTab,
+  onMouseDown, onMouseMove, onMouseUp, onReset, onSelectTab, activeTab, onSelect,
 }: Props) => {
   return (
     <div className="space-y-4">
-      {/* Photo Container */}
+      {/* Photo Container or Suggestions Grid */}
       <div className="bg-card rounded-2xl shadow-lg overflow-hidden relative">
-        {!userImage && !showCamera ? (
+        {activeTab === "select" ? (
+          /* Suggestions Grid - same height as photo */
+          <div className="aspect-[4/5] overflow-y-auto p-4">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <h3 className="font-display text-xl font-bold text-foreground italic">Gợi Ý Cho Bạn</h3>
+              <Sparkles className="w-4 h-4 text-primary" />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {necklaces.map((n, idx) => (
+                <div
+                  key={n.id}
+                  onClick={() => { onSelect(idx); onSelectTab("photo"); }}
+                  className={`cursor-pointer group relative rounded-xl overflow-hidden transition-all hover:shadow-lg ${
+                    selectedNecklace === idx ? "ring-2 ring-primary shadow-md" : ""
+                  }`}
+                >
+                  {idx === 0 && (
+                    <span className="absolute top-2 left-2 z-10 bg-red-500 text-primary-foreground font-body text-[10px] font-bold px-2 py-0.5 rounded-full">
+                      Hot
+                    </span>
+                  )}
+                  <button
+                    onClick={(e) => { e.stopPropagation(); onToggleFavorite(n.id); }}
+                    className="absolute top-2 right-2 z-10"
+                  >
+                    <Heart className={`w-5 h-5 transition-colors ${
+                      favorites.has(n.id) ? "text-red-500 fill-red-500" : "text-muted-foreground/50 group-hover:text-red-400"
+                    }`} />
+                  </button>
+                  <div className="bg-cream aspect-square">
+                    <img src={n.image} alt={n.nameVi} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  </div>
+                  <div className="p-2.5 bg-card">
+                    <p className="font-body text-xs font-medium text-foreground truncate">{n.name}</p>
+                    <p className="font-body text-xs font-bold text-primary mt-0.5">{n.priceDisplay}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : !userImage && !showCamera ? (
           <div className="aspect-[4/5] flex flex-col items-center justify-center gap-4 bg-cream">
             <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-2">
               <Camera className="w-10 h-10 text-primary" />
@@ -82,15 +126,11 @@ const TryOnPhotoArea = ({
                 onMouseDown={onMouseDown}
                 draggable={false}
               />
-
-              {/* Xoay 3D badge */}
               <div className="absolute top-4 right-4 bg-card/90 backdrop-blur-sm rounded-xl px-3 py-2 shadow-md flex items-center gap-2 cursor-pointer hover:bg-card transition-colors">
                 <img src={necklaces[selectedNecklace].image} alt="" className="w-8 h-8 rounded-lg object-cover" />
                 <span className="font-body text-xs font-medium text-foreground">Xoay 3D</span>
               </div>
             </div>
-
-            {/* Bottom buttons on photo */}
             <div className="absolute bottom-4 left-4 right-4 flex justify-center gap-3">
               <button onClick={() => onSelectTab("select")} className="bg-card/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 text-sm font-body font-medium text-foreground shadow-md hover:bg-card transition-colors">
                 <Search className="w-4 h-4" /> Chọn Vòng
