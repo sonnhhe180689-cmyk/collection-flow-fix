@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
-import luxuryShowroom from "@/assets/luxury-showroom.jpg";
+import bgShowroom from "@/assets/bg-showroom.png";
 import GiftSection from "@/components/GiftSection";
 
 const reviews = [
