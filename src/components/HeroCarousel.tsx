@@ -50,59 +50,60 @@ const HeroCarousel = () => {
   }, [next]);
 
   return (
-    <section className="w-full">
-      {/* Image Carousel */}
-      <div className="relative w-full h-[70vh] overflow-hidden">
-        {slides.map((slide, i) => (
-          <div
-            key={i}
-            className="absolute inset-0 transition-all duration-700 ease-in-out"
-            style={{
-              opacity: i === current ? 1 : 0,
-              transform: i === current ? "scale(1)" : "scale(1.05)",
-            }}
-          >
-            <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-          </div>
-        ))}
-
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === current ? "bg-primary w-8" : "bg-primary-foreground/50"
-              }`}
-            />
-          ))}
+    <section className="relative w-full h-[90vh] overflow-hidden">
+      {/* Images */}
+      {slides.map((slide, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 transition-all duration-700 ease-in-out"
+          style={{
+            opacity: i === current ? 1 : 0,
+            transform: i === current ? "scale(1)" : "scale(1.05)",
+          }}
+        >
+          <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+          <div className="hero-overlay absolute inset-0" />
         </div>
-      </div>
+      ))}
 
-      {/* Text & CTA - Outside the carousel */}
-      <div className="bg-background py-10">
-        <div className="container mx-auto px-4 text-center">
+      {/* Text overlay on image */}
+      <div className="absolute inset-0 flex items-center">
+        <div className="container mx-auto px-4 md:px-16">
           <div
+            className="max-w-lg"
             style={{
               opacity: textVisible ? 1 : 0,
-              transform: textVisible ? "translateY(0)" : "translateY(15px)",
+              transform: textVisible ? "translateY(0)" : "translateY(20px)",
               transition: "opacity 0.4s ease, transform 0.4s ease",
             }}
           >
-            <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight">
               {slides[current].title}
             </h1>
-            <p className="font-heading text-lg md:text-xl text-muted-foreground mt-3 italic">
+            <p className="font-heading text-lg md:text-xl text-primary-foreground/90 mt-4 italic">
               {slides[current].subtitle}
             </p>
             <button
-              className="btn-gold mt-6 text-sm inline-flex items-center gap-2"
+              className="btn-gold mt-8 text-sm inline-flex items-center gap-2"
               onClick={() => navigate(slides[current].link)}
             >
               {slides[current].cta} <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Dots */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === current ? "bg-primary w-8" : "bg-primary-foreground/50"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );
