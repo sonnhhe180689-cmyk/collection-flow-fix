@@ -27,6 +27,7 @@ const colors = [
 const TryOnProductInfo = ({
   necklace, selectedColor, onSelectColor, onAddToCart,
   onSelectNecklace, necklaceScale, onScaleChange, activeTab, onSelectTab,
+  favList, onSelectFavorite,
 }: Props) => {
   return (
     <div className="bg-card rounded-2xl shadow-lg p-6 space-y-5">

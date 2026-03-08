@@ -83,8 +83,8 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
         )}
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 overflow-hidden">
-          {necklaces.slice(scrollOffset, scrollOffset + 4).map((n, idx) => {
-            const realIdx = scrollOffset + idx;
+          {filtered.slice(scrollOffset, scrollOffset + 4).map((n, idx) => {
+            const realIdx = necklaces.indexOf(n);
             return (
               <div
                 key={n.id}

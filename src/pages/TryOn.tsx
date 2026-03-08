@@ -165,6 +165,11 @@ const TryOn = () => {
               onScaleChange={setNecklaceScale}
               activeTab={activeTab}
               onSelectTab={setActiveTab}
+              favList={necklaces.filter((n) => favorites.has(n.id))}
+              onSelectFavorite={(id) => {
+                const idx = necklaces.findIndex((n) => n.id === id);
+                if (idx >= 0) handleSelectNecklace(idx);
+              }}
             />
           </div>
         </div>
