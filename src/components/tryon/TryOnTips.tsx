@@ -32,7 +32,7 @@ const TryOnTips = () => (
       {tips.map((tip, i) => (
         <div
           key={i}
-          className="flex flex-col items-center text-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/10"
+          className="flex flex-col items-center text-center gap-3 p-4 rounded-xl bg-primary/5 border border-primary/10 transition-all duration-300 hover:bg-primary/15 hover:shadow-lg hover:scale-[1.03] cursor-default"
         >
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
             {tip.icon}
