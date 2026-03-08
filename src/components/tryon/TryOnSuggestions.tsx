@@ -15,7 +15,13 @@ interface Props {
   colorFilter?: string;
 }
 
-const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, onToggleFavorite }: Props) => {
+const colorCategoryMap: Record<string, string[]> = {
+  gold: ["gold", "luxury"],
+  silver: ["silver", "diamond"],
+  rosegold: ["rosegold", "pearl"],
+};
+
+const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, onToggleFavorite, colorFilter }: Props) => {
   const [scrollOffset, setScrollOffset] = useState(0);
   const maxScroll = Math.max(0, necklaces.length - 4);
 
