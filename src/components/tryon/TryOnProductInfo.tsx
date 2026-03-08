@@ -1,5 +1,5 @@
 import { Star, SlidersHorizontal } from "lucide-react";
-import bgLuxury3 from "@/assets/bg-luxury-3.jpg";
+import bgShowroom from "@/assets/bg-showroom.png";
 
 interface FavNecklace {
   id: number; nameVi: string; image: string;
