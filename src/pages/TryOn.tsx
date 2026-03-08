@@ -1,6 +1,7 @@
 import { Upload, Camera, Search, RotateCcw, SlidersHorizontal, Heart, ChevronLeft, ChevronRight, Sparkles, Eye, ShieldCheck, Star } from "lucide-react";
 import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
+import { useFavorites } from "@/context/FavoritesContext";
 import { toast } from "@/hooks/use-toast";
 import { useState, useRef } from "react";
 import TryOnPhotoArea from "@/components/tryon/TryOnPhotoArea";
@@ -18,11 +19,11 @@ const TryOn = () => {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState<"photo" | "select" | "adjust">("photo");
   const [selectedColor, setSelectedColor] = useState("gold");
-  const [favorites, setFavorites] = useState<Set<number>>(new Set());
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showCamera, setShowCamera] = useState(false);
   const { addToCart } = useCart();
+  const { favorites, toggleFavorite } = useFavorites();
 
   const necklaces = products.map((p) => ({
     id: p.id, name: p.name, nameVi: p.nameVi, price: p.price,
@@ -87,12 +88,8 @@ const TryOn = () => {
     toast({ title: `✅ Đã chọn ${necklaces[i].nameVi}!` });
   };
 
-  const toggleFavorite = (id: number) => {
-    setFavorites((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
+  const handleToggleFavorite = (id: number) => {
+    toggleFavorite(id);
   };
 
   const handleAddToCart = () => {
@@ -182,7 +179,7 @@ const TryOn = () => {
               selectedNecklace={selectedNecklace}
               favorites={favorites}
               onSelect={handleSelectNecklace}
-              onToggleFavorite={toggleFavorite}
+              onToggleFavorite={handleToggleFavorite}
             />
           </div>
           <div>

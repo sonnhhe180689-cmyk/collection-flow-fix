@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Star, ShoppingCart, Search, ArrowRight } from "lucide-react";
+import { Star, ShoppingCart, Search, ArrowRight, Heart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useFavorites } from "@/context/FavoritesContext";
 import { products } from "@/data/products";
 import { toast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
@@ -33,6 +34,7 @@ const Collections = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const { addToCart } = useCart();
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   const handleAddToCart = (p: typeof products[0]) => {
     addToCart({ id: p.id, name: p.name, nameVi: p.nameVi, price: p.price, image: p.image });
@@ -140,7 +142,7 @@ const Collections = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {displayedProducts.map((col) => (
-              <div key={col.id} className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer">
+              <div key={col.id} className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer relative">
                 <div className="overflow-hidden">
                   <img src={col.image} alt={col.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
@@ -148,9 +150,24 @@ const Collections = () => {
                   <h3 className="font-display text-lg font-semibold">{col.name}</h3>
                   <p className="font-body text-xs text-muted-foreground">{col.nameVi}</p>
                   <p className="font-body text-primary text-sm font-medium mt-1">{col.priceDisplay}</p>
-                  <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs mt-3 px-4 py-2">
-                    <ShoppingCart className="w-3 h-3 inline mr-1" /> Thêm Vào Giỏ Hàng
-                  </button>
+                  <div className="flex items-center justify-center gap-2 mt-3">
+                    <button
+                      onClick={() => {
+                        toggleFavorite(col.id);
+                        toast({ title: isFavorite(col.id) ? `Đã bỏ ${col.nameVi} khỏi yêu thích` : `❤️ Đã thêm ${col.nameVi} vào yêu thích!` });
+                      }}
+                      className={`p-2 rounded-full border transition-all ${
+                        isFavorite(col.id)
+                          ? "border-red-400 bg-red-50 text-red-500"
+                          : "border-border text-muted-foreground hover:border-red-300 hover:text-red-400"
+                      }`}
+                    >
+                      <Heart className={`w-4 h-4 ${isFavorite(col.id) ? "fill-red-500" : ""}`} />
+                    </button>
+                    <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-4 py-2">
+                      <ShoppingCart className="w-3 h-3 inline mr-1" /> Thêm Vào Giỏ Hàng
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
