@@ -234,8 +234,8 @@ const Collections = () => {
         <div className="absolute inset-0 bg-card/70" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="section-title">Customer Feedback</h2>
-            <p className="section-subtitle">Phản Hồi Từ Khách Hàng</p>
+            <h2 className="section-title">Phản Hồi Khách Hàng</h2>
+            <p className="section-subtitle">Những Lời Đánh Giá Chân Thật</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {reviews.map((review, i) => (
