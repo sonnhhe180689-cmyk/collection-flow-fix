@@ -19,7 +19,6 @@ const TryOn = () => {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState<"photo" | "select" | "adjust">("photo");
   const [selectedColor, setSelectedColor] = useState("gold");
-  const [favorites, setFavorites] = useState<Set<number>>(new Set());
   const fileInputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showCamera, setShowCamera] = useState(false);
