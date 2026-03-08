@@ -73,11 +73,9 @@ const Guide = () => {
                   backgroundImage: `url(${guideBgs[i]})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
-                  opacity: 0.15,
-                  transition: 'opacity 0.5s ease'
                 }} />
-                <div className="absolute inset-0 group-hover:opacity-90 opacity-95 transition-opacity duration-500" style={{
-                  background: 'linear-gradient(135deg, hsl(var(--card) / 0.95) 0%, hsl(var(--card) / 0.88) 50%, hsl(var(--card) / 0.92) 100%)'
+                <div className="absolute inset-0 transition-opacity duration-500 opacity-[0.75] group-hover:opacity-[0.65]" style={{
+                  background: 'linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card)) 100%)'
                 }} />
                 {/* Sparkle background effect */}
                 <div className="absolute inset-0 opacity-30 group-hover:opacity-60 transition-opacity duration-500" style={{
