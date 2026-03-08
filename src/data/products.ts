@@ -22,7 +22,4 @@ export const products: Product[] = [
   { id: 4, name: "Luxury Collection", nameVi: "Bộ Sưu Tập Cao Cấp", price: 12000000, priceDisplay: "12.000.000 ₫", image: necklaceLuxury, category: "luxury" },
   { id: 5, name: "Rose Gold Ruby", nameVi: "Vòng Cổ Vàng Hồng Ruby", price: 9800000, priceDisplay: "9.800.000 ₫", image: necklaceRosegold, category: "rosegold" },
   { id: 6, name: "Silver Sapphire", nameVi: "Vòng Cổ Bạc Sapphire", price: 7500000, priceDisplay: "7.500.000 ₫", image: necklaceSilver, category: "silver" },
-  { id: 7, name: "Classic Diamond", nameVi: "Vòng Cổ Kim Cương Cổ Điển", price: 9200000, priceDisplay: "9.200.000 ₫", image: necklaceDiamondClassic, category: "diamond" },
-  { id: 8, name: "Vintage Diamond", nameVi: "Vòng Cổ Kim Cương Vintage", price: 11500000, priceDisplay: "11.500.000 ₫", image: necklaceDiamondVintage, category: "diamond" },
-  { id: 9, name: "Solitaire Diamond", nameVi: "Vòng Cổ Kim Cương Solitaire", price: 10800000, priceDisplay: "10.800.000 ₫", image: necklaceDiamondSolitaire, category: "diamond" },
 ];
