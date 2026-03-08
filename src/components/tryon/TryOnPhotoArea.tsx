@@ -112,7 +112,7 @@ const TryOnPhotoArea = ({
             <SlidersHorizontal className="w-5 h-5 text-primary" />
             <h3 className="font-display text-lg font-bold text-foreground">Điều Chỉnh Vòng Cổ</h3>
           </div>
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <div className="flex justify-between mb-1.5">
                 <span className="font-body text-sm font-medium text-foreground">Kích thước</span>
@@ -124,10 +124,32 @@ const TryOnPhotoArea = ({
                 className="w-full accent-primary"
               />
             </div>
-            <p className="font-body text-xs text-muted-foreground text-center bg-primary/5 rounded-lg py-2">
-              💡 Kéo vòng cổ trên ảnh để thay đổi vị trí
-            </p>
+            <div>
+              <div className="flex justify-between mb-1.5">
+                <span className="font-body text-sm font-medium text-foreground">Xoay</span>
+                <span className="font-body text-sm text-muted-foreground">{necklaceRotation}°</span>
+              </div>
+              <input
+                type="range" min="-180" max="180" step="1" value={necklaceRotation}
+                onChange={(e) => onRotationChange(parseInt(e.target.value))}
+                className="w-full accent-primary"
+              />
+            </div>
+            <div>
+              <div className="flex justify-between mb-1.5">
+                <span className="font-body text-sm font-medium text-foreground">Độ trong suốt</span>
+                <span className="font-body text-sm text-muted-foreground">{Math.round(necklaceOpacity * 100)}%</span>
+              </div>
+              <input
+                type="range" min="0.1" max="1" step="0.05" value={necklaceOpacity}
+                onChange={(e) => onOpacityChange(parseFloat(e.target.value))}
+                className="w-full accent-primary"
+              />
+            </div>
           </div>
+          <p className="font-body text-xs text-muted-foreground text-center bg-primary/5 rounded-lg py-2">
+            💡 Kéo vòng cổ trên ảnh để thay đổi vị trí
+          </p>
         </div>
       )}
 
