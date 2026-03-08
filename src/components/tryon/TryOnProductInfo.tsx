@@ -1,5 +1,9 @@
 import { Star, SlidersHorizontal } from "lucide-react";
 
+interface FavNecklace {
+  id: number; nameVi: string; image: string;
+}
+
 interface Props {
   necklace: { nameVi: string; priceDisplay: string; image: string; category: string };
   selectedColor: string;
@@ -10,6 +14,8 @@ interface Props {
   onScaleChange: (s: number) => void;
   activeTab: "photo" | "select" | "adjust";
   onSelectTab: (tab: "photo" | "select" | "adjust") => void;
+  favList: FavNecklace[];
+  onSelectFavorite: (id: number) => void;
 }
 
 const colors = [
