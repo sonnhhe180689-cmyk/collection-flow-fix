@@ -187,7 +187,7 @@ const TryOn = () => {
               onRotationChange={setNecklaceRotation}
               onOpacityChange={setNecklaceOpacity}
               activeTab={activeTab}
-              onSelectTab={setActiveTab}
+              onSelectTab={handleSelectTab}
               favList={necklaces.filter((n) => favorites.has(n.id))}
               onSelectFavorite={(id) => {
                 const idx = necklaces.findIndex((n) => n.id === id);
