@@ -200,56 +200,64 @@ const Collections = () => {
         </div>
       </section>
 
-      {/* Leave Feedback */}
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <div className="text-center mb-8">
-            <h2 className="section-title">Leave a Feedback</h2>
-            <p className="section-subtitle">Để Lại Đánh Giá</p>
+      {/* Leave Feedback - Luxury Gold Theme */}
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(40 35% 96%) 0%, hsl(45 40% 93%) 40%, hsl(38 30% 95%) 100%)' }}>
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, hsl(45 60% 50%) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="container mx-auto px-4 max-w-2xl relative z-10">
+          <div className="text-center mb-10">
+            <p className="font-body text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'hsl(40 50% 45%)' }}>Your Opinion Matters</p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">Leave a <span className="italic" style={{ color: 'hsl(40 55% 45%)' }}>Feedback</span></h2>
+            <p className="font-heading text-lg md:text-xl mt-2" style={{ color: 'hsl(40 30% 50%)' }}>Để Lại Đánh Giá</p>
+            <div className="w-16 h-[2px] mx-auto mt-4" style={{ background: 'linear-gradient(90deg, transparent, hsl(40 55% 50%), transparent)' }} />
           </div>
-          <div className="flex justify-center gap-2 mb-8">
+          <div className="flex justify-center gap-3 mb-10">
             {[1, 2, 3, 4, 5].map((star) => (
               <Star
                 key={star}
-                className={`w-8 h-8 cursor-pointer transition-colors ${
-                  star <= selectedRating ? "fill-primary text-primary" : "text-muted-foreground"
+                className={`w-9 h-9 cursor-pointer transition-all duration-300 hover:scale-110 ${
+                  star <= selectedRating ? "drop-shadow-[0_2px_6px_hsl(40,55%,50%,0.4)]" : ""
                 }`}
+                style={{ color: star <= selectedRating ? 'hsl(40 55% 50%)' : 'hsl(40 20% 78%)', fill: star <= selectedRating ? 'hsl(40 55% 50%)' : 'none' }}
                 onClick={() => setSelectedRating(star)}
               />
             ))}
           </div>
-          <div className="space-y-4">
-            <input type="text" placeholder="Tên của bạn" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 border border-border rounded-sm bg-card font-body text-sm focus:outline-none focus:border-primary" />
-            <input type="email" placeholder="Email của bạn" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 border border-border rounded-sm bg-card font-body text-sm focus:outline-none focus:border-primary" />
-            <textarea placeholder="Đánh giá của bạn" rows={4} value={formData.review} onChange={(e) => setFormData({ ...formData, review: e.target.value })} className="w-full px-4 py-3 border border-border rounded-sm bg-card font-body text-sm focus:outline-none focus:border-primary resize-none" />
-            <div className="text-center">
-              <button onClick={handleSubmitReview} className="btn-gold text-sm">Gửi Đánh Giá</button>
+          <div className="space-y-4 luxury-card-gold rounded-xl p-8">
+            <input type="text" placeholder="Tên của bạn" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 border rounded-sm font-body text-sm focus:outline-none transition-all duration-300" style={{ borderColor: 'hsl(40 30% 82%)', background: 'hsl(45 30% 98%)', }} onFocus={(e) => e.target.style.borderColor = 'hsl(40 55% 50%)'} onBlur={(e) => e.target.style.borderColor = 'hsl(40 30% 82%)'} />
+            <input type="email" placeholder="Email của bạn" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 border rounded-sm font-body text-sm focus:outline-none transition-all duration-300" style={{ borderColor: 'hsl(40 30% 82%)', background: 'hsl(45 30% 98%)' }} onFocus={(e) => e.target.style.borderColor = 'hsl(40 55% 50%)'} onBlur={(e) => e.target.style.borderColor = 'hsl(40 30% 82%)'} />
+            <textarea placeholder="Đánh giá của bạn" rows={4} value={formData.review} onChange={(e) => setFormData({ ...formData, review: e.target.value })} className="w-full px-4 py-3 border rounded-sm font-body text-sm focus:outline-none resize-none transition-all duration-300" style={{ borderColor: 'hsl(40 30% 82%)', background: 'hsl(45 30% 98%)' }} onFocus={(e) => e.target.style.borderColor = 'hsl(40 55% 50%)'} onBlur={(e) => e.target.style.borderColor = 'hsl(40 30% 82%)'} />
+            <div className="text-center pt-2">
+              <button onClick={handleSubmitReview} className="font-body font-medium tracking-wider px-10 py-3 rounded-sm text-sm transition-all duration-300 text-white hover:-translate-y-0.5" style={{ background: 'linear-gradient(135deg, hsl(40 50% 38%), hsl(40 55% 50%), hsl(45 50% 60%))', boxShadow: '0 4px 15px hsl(40 55% 50% / 0.3)' }}>
+                Gửi Đánh Giá
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Customer Feedback */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${bgFeedback})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-card/70" />
+      {/* Customer Feedback - Luxury Gold Theme */}
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(38 20% 15%) 0%, hsl(35 25% 12%) 50%, hsl(40 20% 10%) 100%)' }}>
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, hsl(40 60% 50%) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Customer Feedback</h2>
-            <p className="section-subtitle">Phản Hồi Từ Khách Hàng</p>
+          <div className="text-center mb-14">
+            <p className="font-body text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'hsl(40 50% 55%)' }}>Testimonials</p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold" style={{ color: 'hsl(40 40% 90%)' }}>Customer <span className="italic" style={{ color: 'hsl(40 55% 55%)' }}>Feedback</span></h2>
+            <p className="font-heading text-lg md:text-xl mt-2" style={{ color: 'hsl(40 30% 60%)' }}>Phản Hồi Từ Khách Hàng</p>
+            <div className="w-16 h-[2px] mx-auto mt-4" style={{ background: 'linear-gradient(90deg, transparent, hsl(40 55% 50%), transparent)' }} />
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {reviews.map((review, i) => (
-              <div key={i} className="text-center">
-                <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden border-2 border-primary/20">
+              <div key={i} className="text-center p-6 rounded-xl transition-all duration-300 hover:-translate-y-1" style={{ background: 'hsl(38 20% 16% / 0.6)', border: '1px solid hsl(40 40% 35% / 0.2)', backdropFilter: 'blur(10px)' }}>
+                <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden" style={{ border: '2px solid hsl(40 50% 50% / 0.4)', boxShadow: '0 0 20px hsl(40 50% 50% / 0.15)' }}>
                   <img src={review.avatar} alt={review.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex justify-center gap-1 mb-3">
                   {Array.from({ length: review.rating }).map((_, j) => (
-                    <Star key={j} className="w-5 h-5 fill-primary text-primary" />
+                    <Star key={j} className="w-5 h-5" style={{ fill: 'hsl(40 55% 50%)', color: 'hsl(40 55% 50%)' }} />
                   ))}
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-2">{review.name}</h3>
-                <p className="font-body text-sm text-muted-foreground italic leading-relaxed">{review.text}</p>
+                <h3 className="font-display text-xl font-semibold mb-2" style={{ color: 'hsl(40 40% 88%)' }}>{review.name}</h3>
+                <p className="font-body text-sm italic leading-relaxed" style={{ color: 'hsl(40 20% 60%)' }}>{review.text}</p>
               </div>
             ))}
           </div>
