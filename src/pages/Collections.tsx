@@ -34,6 +34,7 @@ const Collections = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const { addToCart } = useCart();
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   const handleAddToCart = (p: typeof products[0]) => {
     addToCart({ id: p.id, name: p.name, nameVi: p.nameVi, price: p.price, image: p.image });
