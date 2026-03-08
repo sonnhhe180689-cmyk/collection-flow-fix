@@ -204,8 +204,8 @@ const Collections = () => {
       <section className="py-20 bg-cream">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
-            <h2 className="section-title">Leave a Feedback</h2>
-            <p className="section-subtitle">Để Lại Đánh Giá</p>
+            <h2 className="section-title">Để Lại Đánh Giá</h2>
+            <p className="section-subtitle">Chia Sẻ Trải Nghiệm Của Bạn</p>
           </div>
           <div className="flex justify-center gap-2 mb-8">
             {[1, 2, 3, 4, 5].map((star) => (
