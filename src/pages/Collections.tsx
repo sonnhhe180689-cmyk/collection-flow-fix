@@ -86,7 +86,7 @@ const Collections = () => {
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 backdrop-blur-md flex flex-col items-center justify-center text-center shadow-[0_0_40px_rgba(255,255,255,0.1),inset_0_0_30px_rgba(255,255,255,0.05)]">
               <h3 className="font-display text-xl md:text-2xl font-bold leading-tight drop-shadow-lg"><span className="text-primary-foreground">Necklace</span><br /><span className="text-primary">Collections</span></h3>
               <p className="font-body text-xs text-primary-foreground/70 mt-1 tracking-wider uppercase">Bộ Sưu Tập Vòng Cổ</p>
-              <button onClick={() => document.getElementById('collections-grid')?.scrollIntoView({ behavior: 'smooth' })} className="mt-3 px-4 py-1.5 text-[10px] font-body font-medium tracking-wider border border-primary-foreground/40 text-primary-foreground rounded-sm hover:bg-primary-foreground/20 transition-all flex items-center gap-1">
+              <button onClick={() => document.getElementById('collections-grid')?.scrollIntoView({ behavior: 'smooth' })} className="mt-3 px-4 py-1.5 text-[10px] font-body font-medium tracking-wider border border-primary text-primary rounded-sm hover:bg-primary/20 transition-all flex items-center gap-1">
                 Xem Chi Tiết <ArrowRight className="w-3 h-3" />
               </button>
             </div>
