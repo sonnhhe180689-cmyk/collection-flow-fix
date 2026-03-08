@@ -195,13 +195,15 @@ const Collections = () => {
       {/* Gift Section - directly below collections, no gap */}
       <GiftSection />
 
-      {/* Luxury Showroom Banner */}
+      {/* Luxury Showroom Banner - Gold */}
       <section className="relative h-[40vh] overflow-hidden">
         <img src={bgShowroom} alt="Không gian trưng bày sang trọng" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-foreground/40 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, hsl(35 30% 10% / 0.6), hsl(40 25% 15% / 0.5))' }}>
           <div className="text-center">
+            <p className="font-body text-xs tracking-[0.35em] uppercase mb-2" style={{ color: 'hsl(40 55% 60%)' }}>Luxury Experience</p>
             <h2 className="font-display text-3xl md:text-4xl text-primary-foreground italic">Không Gian Sang Trọng</h2>
             <p className="font-body text-sm tracking-[0.2em] uppercase text-primary-foreground/80 mt-3">Trải nghiệm mua sắm đẳng cấp tại cửa hàng</p>
+            <div className="w-16 h-[2px] mx-auto mt-4" style={{ background: 'linear-gradient(90deg, transparent, hsl(40 55% 55%), transparent)' }} />
           </div>
         </div>
       </section>
