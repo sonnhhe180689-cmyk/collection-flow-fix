@@ -16,6 +16,8 @@ const TryOn = () => {
   const [userImage, setUserImage] = useState<string | null>(null);
   const [necklacePos, setNecklacePos] = useState({ x: 0, y: 80 });
   const [necklaceScale, setNecklaceScale] = useState(1);
+  const [necklaceRotation, setNecklaceRotation] = useState(0);
+  const [necklaceOpacity, setNecklaceOpacity] = useState(0.92);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState<"photo" | "select" | "adjust">("photo");
@@ -103,6 +105,8 @@ const TryOn = () => {
     setUserImage(null);
     setNecklacePos({ x: 0, y: 0 });
     setNecklaceScale(1);
+    setNecklaceRotation(0);
+    setNecklaceOpacity(0.92);
   };
 
   const stopCamera = () => {
@@ -152,6 +156,10 @@ const TryOn = () => {
               activeTab={activeTab}
               onSelect={handleSelectNecklace}
               onScaleChange={setNecklaceScale}
+              necklaceRotation={necklaceRotation}
+              necklaceOpacity={necklaceOpacity}
+              onRotationChange={setNecklaceRotation}
+              onOpacityChange={setNecklaceOpacity}
             />
           </div>
 
