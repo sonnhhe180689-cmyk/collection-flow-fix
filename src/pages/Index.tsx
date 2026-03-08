@@ -79,6 +79,8 @@ const Index = () => {
         </div>
       </section>
 
+      <div className="py-10 bg-background" />
+
       {/* Craftsmanship Banner - Video */}
       <section className="relative h-[60vh] overflow-hidden">
         <img src={craftsmanship} alt="Nghệ thuật chế tác" className="w-full h-full object-cover" />
