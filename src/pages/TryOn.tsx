@@ -137,6 +137,8 @@ const TryOn = () => {
               necklacePos={necklacePos}
               necklaceScale={necklaceScale}
               isDragging={isDragging}
+              favorites={favorites}
+              onToggleFavorite={handleToggleFavorite}
               onFileUpload={handleFileUpload}
               onOpenCamera={handleOpenCamera}
               onCapture={handleCapture}
@@ -147,6 +149,7 @@ const TryOn = () => {
               onReset={handleReset}
               onSelectTab={setActiveTab}
               activeTab={activeTab}
+              onSelect={handleSelectNecklace}
             />
           </div>
 
