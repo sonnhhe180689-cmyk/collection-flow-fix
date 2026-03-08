@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <div className="pt-16">
-      <section className="py-16 luxury-header">
+      <section className="py-16 luxury-header-classic">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
             <span className="block font-display text-4xl md:text-5xl font-bold text-white">Liên Hệ</span>

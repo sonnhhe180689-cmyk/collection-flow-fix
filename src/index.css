@@ -171,7 +171,17 @@
     overflow: hidden;
   }
 
-  .luxury-header::before {
+  .luxury-header-classic {
+    background-image: url('@/assets/bg-showroom-classic.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .luxury-header::before,
+  .luxury-header-classic::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -184,7 +194,8 @@
     pointer-events: none;
   }
 
-  .luxury-header::after {
+  .luxury-header::after,
+  .luxury-header-classic::after {
     content: '';
     position: absolute;
     inset: 0;
