@@ -8,7 +8,7 @@ import hero3 from "@/assets/hero-3.jpg";
 const slides = [
   {
     image: hero1,
-    title: "BỘ\nSƯU TẬP",
+    title: "BỘ SƯU TẬP\nMỚI",
     subtitle: "Sang trọng. Thanh lịch. Vẻ đẹp vượt thời gian.",
     cta: "Khám Phá Bộ Sưu Tập",
     link: "/bo-suu-tap",
