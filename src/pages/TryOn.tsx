@@ -88,12 +88,8 @@ const TryOn = () => {
     toast({ title: `✅ Đã chọn ${necklaces[i].nameVi}!` });
   };
 
-  const toggleFavorite = (id: number) => {
-    setFavorites((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
+  const handleToggleFavorite = (id: number) => {
+    toggleFavorite(id);
   };
 
   const handleAddToCart = () => {

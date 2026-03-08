@@ -30,22 +30,24 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <CartProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/bo-suu-tap" element={<Collections />} />
-            <Route path="/thu-vong-co" element={<TryOn />} />
-            <Route path="/huong-dan" element={<Guide />} />
-            <Route path="/lien-he" element={<Contact />} />
-            <Route path="/gio-hang" element={<Cart />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
+        <FavoritesProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/bo-suu-tap" element={<Collections />} />
+              <Route path="/thu-vong-co" element={<TryOn />} />
+              <Route path="/huong-dan" element={<Guide />} />
+              <Route path="/lien-he" element={<Contact />} />
+              <Route path="/gio-hang" element={<Cart />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </FavoritesProvider>
       </CartProvider>
     </TooltipProvider>
   </QueryClientProvider>
