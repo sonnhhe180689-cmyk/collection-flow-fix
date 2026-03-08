@@ -272,11 +272,13 @@ const Collections = () => {
         </div>
       </section>
 
-      {/* Try-On CTA */}
-      <section className="py-20 bg-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground">Trải Nghiệm Thử Vòng Cổ</h2>
-          <p className="font-body text-primary-foreground/70 mt-4 max-w-xl mx-auto italic">
+      {/* Try-On CTA - Gold Dark */}
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(38 25% 12%) 0%, hsl(35 30% 8%) 100%)' }}>
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, hsl(40 60% 50%) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <p className="font-body text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'hsl(40 50% 55%)' }}>Virtual Try-On</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold" style={{ color: 'hsl(40 30% 90%)' }}>Trải Nghiệm Thử <span className="italic" style={{ color: 'hsl(40 55% 55%)' }}>Vòng Cổ</span></h2>
+          <p className="font-body mt-4 max-w-xl mx-auto italic" style={{ color: 'hsl(40 20% 55%)' }}>
             Tải ảnh của bạn lên và thử ngay các mẫu vòng cổ yêu thích. Xem trước khi mua để chắc chắn bạn đã chọn đúng!
           </p>
           <Link to="/thu-vong-co">
