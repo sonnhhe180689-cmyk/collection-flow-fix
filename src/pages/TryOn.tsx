@@ -23,6 +23,7 @@ const TryOn = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showCamera, setShowCamera] = useState(false);
   const { addToCart } = useCart();
+  const { favorites, toggleFavorite } = useFavorites();
 
   const necklaces = products.map((p) => ({
     id: p.id, name: p.name, nameVi: p.nameVi, price: p.price,
