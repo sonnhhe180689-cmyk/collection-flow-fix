@@ -172,7 +172,11 @@ const TryOn = () => {
               onAddToCart={handleAddToCart}
               onSelectNecklace={() => setActiveTab("select")}
               necklaceScale={necklaceScale}
+              necklaceRotation={necklaceRotation}
+              necklaceOpacity={necklaceOpacity}
               onScaleChange={setNecklaceScale}
+              onRotationChange={setNecklaceRotation}
+              onOpacityChange={setNecklaceOpacity}
               activeTab={activeTab}
               onSelectTab={setActiveTab}
               favList={necklaces.filter((n) => favorites.has(n.id))}
