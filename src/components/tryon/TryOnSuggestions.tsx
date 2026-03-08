@@ -31,10 +31,10 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
 
   const filters = [
     { key: "all", label: "Tất Cả" },
-    { key: "diamond", label: "Cổ Điển" },
+    { key: "pearl", label: "Cổ Điển" },
     { key: "luxury", label: "Cao Cấp" },
-    { key: "gold", label: "Hiện Đại" },
-    { key: "pearl", label: "Đá Quý" },
+    { key: "rosegold", label: "Hiện Đại" },
+    { key: "diamond", label: "Đá Quý" },
   ];
 
   const filtered = necklaces.filter((n) => {
