@@ -30,7 +30,8 @@ const colors = [
 
 const TryOnProductInfo = ({
   necklace, selectedColor, onSelectColor, onAddToCart,
-  onSelectNecklace, necklaceScale, onScaleChange, activeTab, onSelectTab,
+  onSelectNecklace, necklaceScale, necklaceRotation, necklaceOpacity,
+  onScaleChange, onRotationChange, onOpacityChange, activeTab, onSelectTab,
   favList, onSelectFavorite,
 }: Props) => {
   return (
