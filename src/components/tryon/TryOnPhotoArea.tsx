@@ -82,9 +82,9 @@ const TryOnPhotoArea = ({
                 style={{
                   left: `calc(50% + ${necklacePos.x}px)`,
                   top: `${necklacePos.y}px`,
-                  transform: `translateX(-50%) scale(${necklaceScale})`,
+                  transform: `translateX(-50%) scale(${necklaceScale}) rotate(${necklaceRotation}deg)`,
                   width: "35%",
-                  opacity: 0.92,
+                  opacity: necklaceOpacity,
                   borderRadius: "50%",
                   filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.15))",
                 }}
