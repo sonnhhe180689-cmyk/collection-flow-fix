@@ -9,6 +9,7 @@ import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
 import bgShowroom from "@/assets/bg-showroom.png";
+import bgFeedback from "@/assets/bg-feedback.jpg";
 import GiftSection from "@/components/GiftSection";
 
 const reviews = [
@@ -200,7 +201,7 @@ const Collections = () => {
       </section>
 
       {/* Customer Feedback */}
-        <section className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${bgShowroom})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <section className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${bgFeedback})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className="absolute inset-0 bg-card/70" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
