@@ -161,7 +161,7 @@ const TryOn = () => {
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
               onReset={handleReset}
-              onSelectTab={setActiveTab}
+               onSelectTab={handleSelectTab}
               activeTab={activeTab}
               onSelect={handleSelectNecklace}
               onScaleChange={setNecklaceScale}
