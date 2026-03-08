@@ -35,7 +35,7 @@ const TryOnProductInfo = ({
   favList, onSelectFavorite,
 }: Props) => {
   return (
-    <div className="bg-card rounded-2xl shadow-lg p-6 space-y-5">
+    <div className="luxury-card-gold rounded-2xl p-6 space-y-5">
       {/* Product Name + Badge */}
       <div>
         <div className="flex items-start justify-between gap-2">

@@ -28,7 +28,7 @@ const extraModels = [
 
 const TryOnSidebar = ({ necklaces, favorites, onSelect }: Props) => {
   return (
-    <div className="bg-card rounded-2xl shadow-lg p-5 h-full">
+    <div className="luxury-card rounded-2xl p-5 h-full">
       <h3 className="font-display text-xl font-bold text-foreground mb-4">Đổi Mẫu Vòng</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {extraModels.map((m) => (

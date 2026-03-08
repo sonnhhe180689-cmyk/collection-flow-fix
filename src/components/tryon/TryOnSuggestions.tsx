@@ -44,7 +44,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   });
 
   return (
-    <div className="bg-card rounded-2xl shadow-lg p-5 h-full flex flex-col">
+    <div className="luxury-card rounded-2xl p-5 h-full flex flex-col">
       {/* Filters */}
       <div className="flex gap-2 mb-5 flex-nowrap overflow-x-auto">
         {filters.map((f) => (
