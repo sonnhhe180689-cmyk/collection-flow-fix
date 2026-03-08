@@ -114,7 +114,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
                     favorites.has(n.id) ? "text-red-500 fill-red-500" : "text-muted-foreground/50 group-hover:text-red-400"
                   }`} />
                 </button>
-                <div className="bg-cream aspect-square">
+                <div className="bg-cream aspect-[3/4]">
                   <img src={n.image} alt={n.nameVi} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="p-2.5 bg-card">
