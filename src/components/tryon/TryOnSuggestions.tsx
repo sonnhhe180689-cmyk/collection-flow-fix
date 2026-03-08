@@ -1,6 +1,6 @@
 import { Heart, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { useState } from "react";
-import bgLuxury2 from "@/assets/bg-luxury-2.jpg";
+import bgShowroom from "@/assets/bg-showroom.png";
 
 interface Necklace {
   id: number; name: string; nameVi: string; price: number;
