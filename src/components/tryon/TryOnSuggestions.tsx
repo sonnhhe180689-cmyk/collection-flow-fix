@@ -44,7 +44,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   });
 
   return (
-    <div className="bg-card rounded-2xl shadow-lg p-6">
+    <div className="bg-card rounded-2xl shadow-lg p-5 h-full flex flex-col">
       {/* Search + Filters */}
       <div className="flex flex-col sm:flex-row items-center gap-3 mb-6">
         <div className="relative flex-1 w-full">
@@ -80,7 +80,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
         <Sparkles className="w-4 h-4 text-primary" />
       </div>
 
-      <div className="relative">
+      <div className="relative flex-1">
         {scrollOffset > 0 && (
           <button
             onClick={() => setScrollOffset(Math.max(0, scrollOffset - 1))}
@@ -90,7 +90,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
           </button>
         )}
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 overflow-hidden">
+        <div className="grid grid-cols-2 gap-4 overflow-hidden">
           {filtered.slice(scrollOffset, scrollOffset + 4).map((n, idx) => {
             const realIdx = necklaces.indexOf(n);
             return (
@@ -114,7 +114,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
                     favorites.has(n.id) ? "text-red-500 fill-red-500" : "text-muted-foreground/50 group-hover:text-red-400"
                   }`} />
                 </button>
-                <div className="bg-cream aspect-square">
+                <div className="bg-cream aspect-[3/4]">
                   <img src={n.image} alt={n.nameVi} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="p-2.5 bg-card">
