@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
-import luxuryShowroom from "@/assets/luxury-showroom.jpg";
+import bgShowroom from "@/assets/bg-showroom.png";
 import GiftSection from "@/components/GiftSection";
 
 const reviews = [
@@ -65,7 +65,7 @@ const Collections = () => {
     <div className="pt-16">
       {/* Hero Banner */}
       <section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
-        <img src={luxuryShowroom} alt="Bộ Sưu Tập Vòng Cổ" className="w-full h-full object-cover" />
+        <img src={bgShowroom} alt="Bộ Sưu Tập Vòng Cổ" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -190,7 +190,7 @@ const Collections = () => {
 
       {/* Luxury Showroom Banner */}
       <section className="relative h-[40vh] overflow-hidden">
-        <img src={luxuryShowroom} alt="Không gian trưng bày sang trọng" className="w-full h-full object-cover" />
+        <img src={bgShowroom} alt="Không gian trưng bày sang trọng" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/40 flex items-center justify-center">
           <div className="text-center">
             <h2 className="font-display text-3xl md:text-4xl text-primary-foreground italic">Không Gian Sang Trọng</h2>
