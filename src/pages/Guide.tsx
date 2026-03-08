@@ -102,14 +102,14 @@ const Guide = () => {
                     {step.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-display text-xl font-bold mb-2 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">{step.desc}</p>
-                    <div className="bg-cream rounded-lg p-4 transition-all duration-300 group-hover:bg-primary/5">
-                      <p className="font-body text-sm font-medium mb-2">Mẹo nhỏ:</p>
+                    <h3 className="font-display text-xl font-bold mb-2 transition-colors duration-300 group-hover:text-primary text-foreground drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]">{step.title}</h3>
+                    <p className="font-body text-sm text-foreground/80 font-medium leading-relaxed mb-4 drop-shadow-[0_1px_1px_rgba(255,255,255,0.6)]">{step.desc}</p>
+                    <div className="bg-background/70 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 group-hover:bg-background/80">
+                      <p className="font-body text-sm font-semibold mb-2 text-foreground">Mẹo nhỏ:</p>
                       {step.tips.map((tip, j) => (
                         <div key={j} className="flex items-center gap-2 mb-1">
                           <CheckCircle className="w-4 h-4 text-primary transition-transform duration-300 group-hover:scale-110" />
-                          <span className="font-body text-sm text-muted-foreground">{tip}</span>
+                          <span className="font-body text-sm text-foreground/80 font-medium">{tip}</span>
                         </div>
                       ))}
                     </div>
