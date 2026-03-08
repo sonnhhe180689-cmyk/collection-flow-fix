@@ -190,7 +190,7 @@ const Collections = () => {
 
       {/* Luxury Showroom Banner */}
       <section className="relative h-[40vh] overflow-hidden">
-        <img src={luxuryShowroom} alt="Không gian trưng bày sang trọng" className="w-full h-full object-cover" />
+        <img src={bgShowroom} alt="Không gian trưng bày sang trọng" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/40 flex items-center justify-center">
           <div className="text-center">
             <h2 className="font-display text-3xl md:text-4xl text-primary-foreground italic">Không Gian Sang Trọng</h2>
