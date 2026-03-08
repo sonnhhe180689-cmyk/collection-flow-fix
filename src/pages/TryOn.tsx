@@ -126,17 +126,17 @@ const TryOn = () => {
 
   return (
     <div className="pt-16 min-h-screen" style={{ background: "linear-gradient(180deg, hsl(174 30% 95%) 0%, hsl(180 20% 99%) 100%)" }}>
+      {/* Header - full width */}
+      <div className="text-center luxury-header py-14 px-4">
+        <h1 className="relative z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
+          <span className="block font-display text-4xl md:text-5xl font-bold text-white">Thử Vòng Cổ</span>
+          <span className="block font-display text-5xl md:text-6xl font-bold italic text-primary mt-1" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.25)' }}>Trực Tuyến</span>
+        </h1>
+        <p className="font-body text-white/80 mt-4 relative z-10 text-base md:text-lg max-w-xl mx-auto" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.2)' }}>
+          Tải ảnh của bạn lên và xem thử các mẫu vòng cổ yêu thích ngay trên màn hình
+        </p>
+      </div>
       <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-10 luxury-header rounded-2xl py-14 px-4">
-          <h1 className="relative z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
-            <span className="block font-display text-4xl md:text-5xl font-bold text-white">Thử Vòng Cổ</span>
-            <span className="block font-display text-5xl md:text-6xl font-bold italic text-primary mt-1" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.25)' }}>Trực Tuyến</span>
-          </h1>
-          <p className="font-body text-white/80 mt-4 relative z-10 text-base md:text-lg max-w-xl mx-auto" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.2)' }}>
-            Tải ảnh của bạn lên và xem thử các mẫu vòng cổ yêu thích ngay trên màn hình
-          </p>
-        </div>
 
         {/* Main area: Photo + Product Info */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
