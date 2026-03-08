@@ -15,7 +15,7 @@ const slides = [
   },
   {
     image: hero2,
-    title: "THỬ VÒNG CỔ",
+    title: "TRẢI NGHIỆM\nTHỰC TẾ",
     subtitle: "Thử vòng cổ trực tuyến ngay trên ảnh của bạn.",
     cta: "Thử Vòng Cổ Ngay",
     link: "/thu-vong-co",
