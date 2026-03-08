@@ -94,19 +94,6 @@ const HeroCarousel = () => {
         </div>
       </div>
 
-      {/* Arrow navigation */}
-      <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/30 backdrop-blur-sm flex items-center justify-center hover:bg-background/50 transition-colors z-10"
-      >
-        <ChevronLeft className="w-6 h-6 text-primary-foreground" />
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/30 backdrop-blur-sm flex items-center justify-center hover:bg-background/50 transition-colors z-10"
-      >
-        <ChevronRight className="w-6 h-6 text-primary-foreground" />
-      </button>
 
       {/* Dots navigation */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
