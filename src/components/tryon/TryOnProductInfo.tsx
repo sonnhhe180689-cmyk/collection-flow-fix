@@ -11,7 +11,11 @@ interface Props {
   onAddToCart: () => void;
   onSelectNecklace: () => void;
   necklaceScale: number;
+  necklaceRotation: number;
+  necklaceOpacity: number;
   onScaleChange: (s: number) => void;
+  onRotationChange: (r: number) => void;
+  onOpacityChange: (o: number) => void;
   activeTab: "photo" | "select" | "adjust";
   onSelectTab: (tab: "photo" | "select" | "adjust") => void;
   favList: FavNecklace[];
