@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <div className="pt-16">
-      <section className="py-16 bg-cream">
+      <section className="py-16 luxury-header">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold">
             Liên Hệ <span className="text-primary italic">Với Chúng Tôi</span>
