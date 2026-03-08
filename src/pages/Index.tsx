@@ -122,7 +122,7 @@ const Index = () => {
               <img src={craftsmanship} alt="Chế tác" className="w-full h-80 object-cover" />
             </div>
             <div>
-              <h2 className="font-display text-3xl md:text-4xl font-bold">Câu Chuyện Sang Trọng</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">Khám Phá Câu Chuyện</h2>
               <p className="section-subtitle text-left">Nghệ Thuật Chế Tác</p>
               <p className="font-body text-muted-foreground mt-6 leading-relaxed">
                 Mỗi chiếc vòng cổ được chế tác bởi những nghệ nhân kim hoàn giàu kinh nghiệm với sự tỉ mỉ tuyệt đối trong từng chi tiết. Từ việc tuyển chọn đá quý đến sản phẩm cuối cùng, mỗi sản phẩm đều mang giá trị nghệ thuật và đẳng cấp vượt mọi giới hạn.
