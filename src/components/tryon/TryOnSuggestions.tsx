@@ -39,7 +39,8 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
   const filtered = necklaces.filter((n) => {
     const matchSearch = !searchQuery || n.nameVi.toLowerCase().includes(searchQuery.toLowerCase()) || n.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchFilter = activeFilter === "all" || n.category === activeFilter;
-    return matchSearch && matchFilter;
+    const matchColor = !colorFilter || colorCategoryMap[colorFilter]?.includes(n.category);
+    return matchSearch && matchFilter && matchColor;
   });
 
   return (

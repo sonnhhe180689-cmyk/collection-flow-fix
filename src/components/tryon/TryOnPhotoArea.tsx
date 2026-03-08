@@ -101,7 +101,7 @@ const TryOnPhotoArea = ({
       </div>
 
       {/* Step Tabs */}
-      <div className="flex gap-3">
+      <div className="flex gap-3 flex-wrap">
         {[
           { key: "photo" as const, icon: <Camera className="w-4 h-4" />, label: "Chụp Ảnh" },
           { key: "select" as const, icon: <Search className="w-4 h-4" />, label: "Chọn Vòng" },
@@ -119,6 +119,14 @@ const TryOnPhotoArea = ({
             {tab.icon} {tab.label}
           </button>
         ))}
+        {userImage && (
+          <button
+            onClick={onReset}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full font-body text-sm font-medium bg-card text-foreground border border-border hover:border-destructive/30 hover:text-destructive transition-all"
+          >
+            <Camera className="w-4 h-4" /> Chụp Lại
+          </button>
+        )}
       </div>
     </div>
   );
