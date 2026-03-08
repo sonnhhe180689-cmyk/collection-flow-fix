@@ -12,6 +12,8 @@ interface Props {
   onToggleFavorite: (id: number) => void;
   necklacePos: { x: number; y: number };
   necklaceScale: number;
+  necklaceRotation: number;
+  necklaceOpacity: number;
   isDragging: boolean;
   onFileUpload: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onOpenCamera: () => void;
