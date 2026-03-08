@@ -1,4 +1,4 @@
-import { Camera, RotateCcw, Search, Upload } from "lucide-react";
+import { Camera, Heart, RotateCcw, Search, Sparkles, Upload } from "lucide-react";
 import { RefObject } from "react";
 
 interface Props {
