@@ -9,6 +9,7 @@ import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
 import bgShowroom from "@/assets/bg-showroom.png";
+import bgFeedback from "@/assets/bg-feedback.jpg";
 import GiftSection from "@/components/GiftSection";
 
 const reviews = [
