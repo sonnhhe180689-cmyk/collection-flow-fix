@@ -65,7 +65,7 @@ const Collections = () => {
     <div className="pt-16">
       {/* Hero Banner */}
       <section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
-        <img src={luxuryShowroom} alt="Bộ Sưu Tập Vòng Cổ" className="w-full h-full object-cover" />
+        <img src={bgShowroom} alt="Bộ Sưu Tập Vòng Cổ" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
