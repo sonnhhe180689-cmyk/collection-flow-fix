@@ -13,9 +13,9 @@ import bgFeedback from "@/assets/bg-feedback.jpg";
 import GiftSection from "@/components/GiftSection";
 
 const reviews = [
-  { name: "Minh Thu", text: "\"Diamond Necklace rất đẹp, sáng lấp lánh và nhẹ nhàng. Chắc chắn sẽ ghé lại lần nữa!\"", rating: 5, avatar: avatar1 },
+  { name: "Minh Thu", text: "\"Vòng cổ kim cương rất đẹp, sáng lấp lánh và nhẹ nhàng. Chắc chắn sẽ ghé lại lần nữa!\"", rating: 5, avatar: avatar1 },
   { name: "Hương Như", text: "\"Tôi yêu thích vòng cổ ngọc trai ở đây. Sản phẩm giao rất nhanh và chất lượng tuyệt vời!\"", rating: 5, avatar: avatar2 },
-  { name: "Lan Anh", text: "\"The Luxury Collection rất quý phái. Vòng cổ đẹp nhất mà tôi từng sở hữu!\"", rating: 5, avatar: avatar3 },
+  { name: "Lan Anh", text: "\"Bộ sưu tập cao cấp rất quý phái. Vòng cổ đẹp nhất mà tôi từng sở hữu!\"", rating: 5, avatar: avatar3 },
 ];
 
 const INITIAL_COUNT = 4;
@@ -85,8 +85,8 @@ const Collections = () => {
             </div>
             {/* Transparent Necklace Collections circle */}
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 backdrop-blur-md flex flex-col items-center justify-center text-center shadow-[0_0_40px_rgba(255,255,255,0.1),inset_0_0_30px_rgba(255,255,255,0.05)]">
-              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight drop-shadow-lg"><span className="text-primary-foreground">Necklace</span><br /><span className="text-primary">Collections</span></h3>
-              <p className="font-body text-xs text-primary-foreground/70 mt-1 tracking-wider uppercase">Bộ Sưu Tập Vòng Cổ</p>
+              <h3 className="font-display text-xl md:text-2xl font-bold leading-tight drop-shadow-lg"><span className="text-primary-foreground">Bộ Sưu Tập</span><br /><span className="text-primary">Vòng Cổ</span></h3>
+              <p className="font-body text-xs text-primary-foreground/70 mt-1 tracking-wider uppercase">Luna Jewel Collection</p>
               <button onClick={() => document.getElementById('collections-grid')?.scrollIntoView({ behavior: 'smooth' })} className="mt-3 px-5 py-2 text-[10px] font-body font-medium tracking-wider text-white rounded-full bg-gradient-to-r from-[hsl(170,45%,55%)] to-[hsl(185,50%,60%)] hover:from-[hsl(170,45%,50%)] hover:to-[hsl(185,50%,55%)] shadow-md hover:shadow-lg transition-all flex items-center gap-1">
                 Xem Chi Tiết <ArrowRight className="w-3 h-3" />
               </button>
@@ -204,8 +204,8 @@ const Collections = () => {
       <section className="py-20 bg-cream">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
-            <h2 className="section-title">Leave a Feedback</h2>
-            <p className="section-subtitle">Để Lại Đánh Giá</p>
+            <h2 className="section-title">Để Lại Đánh Giá</h2>
+            <p className="section-subtitle">Chia Sẻ Trải Nghiệm Của Bạn</p>
           </div>
           <div className="flex justify-center gap-2 mb-8">
             {[1, 2, 3, 4, 5].map((star) => (
@@ -234,8 +234,8 @@ const Collections = () => {
         <div className="absolute inset-0 bg-card/70" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="section-title">Customer Feedback</h2>
-            <p className="section-subtitle">Phản Hồi Từ Khách Hàng</p>
+            <h2 className="section-title">Phản Hồi Khách Hàng</h2>
+            <p className="section-subtitle">Những Lời Đánh Giá Chân Thật</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {reviews.map((review, i) => (

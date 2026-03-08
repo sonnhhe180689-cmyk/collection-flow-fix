@@ -35,8 +35,8 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="section-title">Featured Necklaces</h2>
-            <p className="section-subtitle">Vòng Cổ Nổi Bật</p>
+            <h2 className="section-title">Vòng Cổ Nổi Bật</h2>
+            <p className="section-subtitle">Những Thiết Kế Được Yêu Thích Nhất</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {products.map((product) => (
@@ -122,7 +122,7 @@ const Index = () => {
               <img src={craftsmanship} alt="Chế tác" className="w-full h-80 object-cover" />
             </div>
             <div>
-              <h2 className="font-display text-3xl md:text-4xl font-bold">The Story of Luxury</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">Câu Chuyện Sang Trọng</h2>
               <p className="section-subtitle text-left">Nghệ Thuật Chế Tác</p>
               <p className="font-body text-muted-foreground mt-6 leading-relaxed">
                 Mỗi chiếc vòng cổ được chế tác bởi những nghệ nhân kim hoàn giàu kinh nghiệm với sự tỉ mỉ tuyệt đối trong từng chi tiết. Từ việc tuyển chọn đá quý đến sản phẩm cuối cùng, mỗi sản phẩm đều mang giá trị nghệ thuật và đẳng cấp vượt mọi giới hạn.
