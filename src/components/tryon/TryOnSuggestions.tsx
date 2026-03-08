@@ -1,4 +1,4 @@
-import { Heart, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { Heart, ChevronLeft, ChevronRight, Sparkles, Search } from "lucide-react";
 import { useState } from "react";
 
 interface Necklace {
