@@ -136,7 +136,7 @@ const Guide = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }} />
-        <div className="absolute inset-0 bg-card/70 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-card/50" />
         <div className="absolute inset-0 opacity-30" style={{
           backgroundImage: `
             radial-gradient(2px 2px at 10% 20%, hsl(var(--primary) / 0.5) 50%, transparent 50%),
