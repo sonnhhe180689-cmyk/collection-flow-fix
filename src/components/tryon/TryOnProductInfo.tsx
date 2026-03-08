@@ -158,6 +158,7 @@ const TryOnProductInfo = ({
           </p>
         </div>
       )}
+      </div>
     </div>
   );
 };
