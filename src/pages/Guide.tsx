@@ -1,4 +1,5 @@
 import { Camera, Sparkles, Heart, ShoppingCart, CheckCircle, SlidersHorizontal, Search } from "lucide-react";
+import bgFaq from "@/assets/bg-showroom-tiffany-faq.png";
 import { Link } from "react-router-dom";
 import guideBg1 from "@/assets/guide-bg-1.jpg";
 import guideBg2 from "@/assets/guide-bg-2.jpg";
@@ -129,16 +130,33 @@ const Guide = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-cream">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url(${bgFaq})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }} />
+        <div className="absolute inset-0 bg-card/70 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `
+            radial-gradient(2px 2px at 10% 20%, hsl(var(--primary) / 0.5) 50%, transparent 50%),
+            radial-gradient(1.5px 1.5px at 30% 70%, hsl(var(--tiffany-light) / 0.6) 50%, transparent 50%),
+            radial-gradient(2px 2px at 50% 10%, hsl(var(--primary) / 0.4) 50%, transparent 50%),
+            radial-gradient(1px 1px at 70% 50%, hsl(var(--tiffany-light) / 0.5) 50%, transparent 50%),
+            radial-gradient(1.5px 1.5px at 85% 85%, hsl(var(--primary) / 0.45) 50%, transparent 50%),
+            radial-gradient(1px 1px at 20% 85%, hsl(var(--tiffany-light) / 0.4) 50%, transparent 50%)
+          `,
+          animation: 'sparkle-float 4s ease-in-out infinite alternate'
+        }} />
+        <div className="container mx-auto px-4 max-w-3xl relative z-10">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">
               Câu Hỏi <span className="text-primary italic">Thường Gặp</span>
             </h2>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-card rounded-lg p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.01] hover:border-primary/30 border border-transparent cursor-pointer group">
+              <div key={i} className="bg-card/80 backdrop-blur-sm rounded-lg p-6 shadow-sm transition-all duration-300 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.15)] hover:scale-[1.01] hover:border-primary/30 border border-primary/10 cursor-pointer group">
                 <h3 className="font-display text-lg font-semibold mb-2 transition-colors duration-300 group-hover:text-primary">{faq.q}</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
               </div>
