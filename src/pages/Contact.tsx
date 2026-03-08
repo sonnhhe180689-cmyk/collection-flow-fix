@@ -1,12 +1,16 @@
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import guideBg1 from "@/assets/guide-bg-1.jpg";
+import guideBg2 from "@/assets/guide-bg-2.jpg";
+import guideBg3 from "@/assets/guide-bg-3.jpg";
+import guideBg4 from "@/assets/guide-bg-4.jpg";
 
 const contactInfo = [
-  { icon: <MapPin className="w-6 h-6" />, title: "Địa Chỉ", lines: ["Đại học FPT, Khu CNC Hòa Lạc", "Thạch Thất, Hà Nội"] },
-  { icon: <Phone className="w-6 h-6" />, title: "Hotline", lines: ["0901 234 567", "0901 234 568"] },
-  { icon: <Mail className="w-6 h-6" />, title: "Email", lines: ["contact@lunajewel.vn", "support@lunajewel.vn"] },
-  { icon: <Clock className="w-6 h-6" />, title: "Giờ Làm Việc", lines: ["Thứ 2 - Chủ Nhật", "9:00 - 21:00"] },
+  { icon: <MapPin className="w-6 h-6" />, title: "Địa Chỉ", lines: ["Đại học FPT, Khu CNC Hòa Lạc", "Thạch Thất, Hà Nội"], bg: guideBg1 },
+  { icon: <Phone className="w-6 h-6" />, title: "Hotline", lines: ["0901 234 567", "0901 234 568"], bg: guideBg2 },
+  { icon: <Mail className="w-6 h-6" />, title: "Email", lines: ["contact@lunajewel.vn", "support@lunajewel.vn"], bg: guideBg3 },
+  { icon: <Clock className="w-6 h-6" />, title: "Giờ Làm Việc", lines: ["Thứ 2 - Chủ Nhật", "9:00 - 21:00"], bg: guideBg4 },
 ];
 
 const Contact = () => {
@@ -40,14 +44,44 @@ const Contact = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="md:col-span-2 grid grid-cols-2 gap-4">
               {contactInfo.map((info, i) => (
-                <div key={i} className="bg-card rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.03] hover:border-primary/30 border border-transparent cursor-pointer group">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110 group-hover:shadow-[0_0_15px_hsl(var(--primary)/0.3)]">
-                    {info.icon}
+                <div key={i} className="relative overflow-hidden rounded-xl p-6 shadow-sm transition-all duration-500 hover:shadow-[0_8px_30px_hsl(var(--primary)/0.15)] hover:scale-[1.03] hover:border-primary/30 border border-primary/10 cursor-pointer group">
+                  {/* Background image */}
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `url(${info.bg})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }} />
+                  <div className="absolute inset-0 transition-opacity duration-500 opacity-[0.78] group-hover:opacity-[0.68]" style={{
+                    background: 'linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card)) 100%)'
+                  }} />
+                  {/* Sparkle effect */}
+                  <div className="absolute inset-0 opacity-25 group-hover:opacity-55 transition-opacity duration-500" style={{
+                    backgroundImage: `
+                      radial-gradient(2px 2px at 15% 25%, hsl(var(--primary) / 0.5) 50%, transparent 50%),
+                      radial-gradient(1.5px 1.5px at 35% 65%, hsl(var(--tiffany-light) / 0.6) 50%, transparent 50%),
+                      radial-gradient(2px 2px at 55% 15%, hsl(var(--primary) / 0.4) 50%, transparent 50%),
+                      radial-gradient(1px 1px at 75% 45%, hsl(var(--tiffany-light) / 0.5) 50%, transparent 50%),
+                      radial-gradient(1.5px 1.5px at 90% 80%, hsl(var(--primary) / 0.45) 50%, transparent 50%),
+                      radial-gradient(1px 1px at 25% 90%, hsl(var(--tiffany-light) / 0.4) 50%, transparent 50%)
+                    `,
+                    animation: 'sparkle-float 4s ease-in-out infinite alternate'
+                  }} />
+                  {/* Shimmer overlay */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{
+                    background: 'linear-gradient(105deg, transparent 30%, hsl(var(--primary) / 0.08) 45%, hsl(var(--tiffany-light) / 0.12) 50%, hsl(var(--primary) / 0.08) 55%, transparent 70%)',
+                    backgroundSize: '200% 100%',
+                    animation: 'shimmer 2s ease-in-out infinite'
+                  }} />
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110 group-hover:shadow-[0_0_15px_hsl(var(--primary)/0.3)]">
+                      {info.icon}
+                    </div>
+                    <h3 className="font-display text-lg font-bold mb-2 transition-colors duration-300 group-hover:text-primary text-foreground drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]">{info.title}</h3>
+                    {info.lines.map((line, j) => (
+                      <p key={j} className="font-body text-sm text-foreground/80 font-medium transition-colors duration-300 group-hover:text-foreground drop-shadow-[0_1px_1px_rgba(255,255,255,0.6)]">{line}</p>
+                    ))}
                   </div>
-                  <h3 className="font-display text-lg font-bold mb-2 transition-colors duration-300 group-hover:text-primary">{info.title}</h3>
-                  {info.lines.map((line, j) => (
-                    <p key={j} className="font-body text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{line}</p>
-                  ))}
                 </div>
               ))}
             </div>
