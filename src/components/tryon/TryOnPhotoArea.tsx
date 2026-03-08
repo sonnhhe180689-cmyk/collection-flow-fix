@@ -158,3 +158,5 @@ const TryOnPhotoArea = ({
     </div>
   );
 };
+
+export default TryOnPhotoArea;
