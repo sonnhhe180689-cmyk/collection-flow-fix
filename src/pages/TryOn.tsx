@@ -6,7 +6,7 @@ import { toast } from "@/hooks/use-toast";
 import { useState, useRef } from "react";
 import TryOnPhotoArea from "@/components/tryon/TryOnPhotoArea";
 import TryOnProductInfo from "@/components/tryon/TryOnProductInfo";
-import TryOnSuggestions from "@/components/tryon/TryOnSuggestions";
+
 import TryOnSidebar from "@/components/tryon/TryOnSidebar";
 import TryOnTips from "@/components/tryon/TryOnTips";
 
