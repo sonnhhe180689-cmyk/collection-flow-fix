@@ -4,9 +4,6 @@ import necklaceGold from "@/assets/necklace-gold.jpg";
 import necklaceLuxury from "@/assets/necklace-luxury.jpg";
 import necklaceRosegold from "@/assets/necklace-rosegold.jpg";
 import necklaceSilver from "@/assets/necklace-silver.jpg";
-import necklaceDiamondClassic from "@/assets/necklace-diamond-classic.jpg";
-import necklaceDiamondVintage from "@/assets/necklace-diamond-vintage.jpg";
-import necklaceDiamondSolitaire from "@/assets/necklace-diamond-solitaire.jpg";
 
 export interface Product {
   id: number;
