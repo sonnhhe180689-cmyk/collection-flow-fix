@@ -14,8 +14,8 @@ export interface GiftItem {
 }
 
 export const gifts: GiftItem[] = [
-  { id: 101, name: "Diamond Gift Set", nameVi: "Bộ Quà Kim Cương", price: 15000000, priceDisplay: "15.000.000 ₫", image: gift1, description: "Hộp quà cao cấp kèm vòng cổ kim cương lấp lánh" },
-  { id: 102, name: "Pendant Gift Box", nameVi: "Hộp Quà Mặt Dây Chuyền", price: 9500000, priceDisplay: "9.500.000 ₫", image: gift2, description: "Mặt dây chuyền sang trọng trong hộp quà thiết kế riêng" },
-  { id: 103, name: "Pearl Gift Collection", nameVi: "Bộ Quà Ngọc Trai", price: 12000000, priceDisplay: "12.000.000 ₫", image: gift3, description: "Bộ sưu tập ngọc trai hoàn hảo cho người thân yêu" },
-  { id: 104, name: "Gold Luxury Gift", nameVi: "Quà Tặng Vàng Sang Trọng", price: 18000000, priceDisplay: "18.000.000 ₫", image: gift4, description: "Quà tặng vàng cao cấp với gói quà tặng sang trọng" },
+  { id: 101, name: "Diamond Gift Set", nameVi: "Bộ Quà Kim Cương", price: 0, priceDisplay: "0 ₫", image: gift1, description: "Hộp quà cao cấp kèm vòng cổ kim cương lấp lánh" },
+  { id: 102, name: "Pendant Gift Box", nameVi: "Hộp Quà Mặt Dây Chuyền", price: 0, priceDisplay: "0 ₫", image: gift2, description: "Mặt dây chuyền sang trọng trong hộp quà thiết kế riêng" },
+  { id: 103, name: "Pearl Gift Collection", nameVi: "Bộ Quà Ngọc Trai", price: 0, priceDisplay: "0 ₫", image: gift3, description: "Bộ sưu tập ngọc trai hoàn hảo cho người thân yêu" },
+  { id: 104, name: "Gold Luxury Gift", nameVi: "Quà Tặng Vàng Sang Trọng", price: 0, priceDisplay: "0 ₫", image: gift4, description: "Quà tặng vàng cao cấp với gói quà tặng sang trọng" },
 ];
