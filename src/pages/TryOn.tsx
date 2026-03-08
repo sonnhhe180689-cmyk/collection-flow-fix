@@ -174,17 +174,6 @@ const TryOn = () => {
           </div>
         </div>
 
-        {/* Bottom: Suggestions */}
-        <div className="mb-8">
-          <TryOnSuggestions
-            necklaces={necklaces}
-            selectedNecklace={selectedNecklace}
-            favorites={favorites}
-            onSelect={handleSelectNecklace}
-            onToggleFavorite={handleToggleFavorite}
-            colorFilter={selectedColor}
-          />
-        </div>
 
         {/* Đổi Mẫu Vòng - full width */}
         <div className="mb-8">
