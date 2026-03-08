@@ -179,7 +179,7 @@ const TryOn = () => {
               selectedNecklace={selectedNecklace}
               favorites={favorites}
               onSelect={handleSelectNecklace}
-              onToggleFavorite={toggleFavorite}
+              onToggleFavorite={handleToggleFavorite}
             />
           </div>
           <div>
