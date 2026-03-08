@@ -1,5 +1,5 @@
 import { Heart } from "lucide-react";
-import bgLuxury2 from "@/assets/bg-luxury-2.jpg";
+import bgShowroom from "@/assets/bg-showroom.png";
 import gift1 from "@/assets/gift-1.jpg";
 import gift2 from "@/assets/gift-2.jpg";
 import gift3 from "@/assets/gift-3.jpg";
