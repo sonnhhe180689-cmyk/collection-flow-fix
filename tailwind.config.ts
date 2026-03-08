@@ -53,10 +53,16 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         tiffany: {
-          DEFAULT: "hsl(var(--tiffany))",
-          light: "hsl(var(--tiffany-light))",
-          dark: "hsl(var(--tiffany-dark))",
-          bg: "hsl(var(--tiffany-bg))",
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
+          bg: "hsl(var(--gold-bg))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
+          bg: "hsl(var(--gold-bg))",
         },
         cream: {
           DEFAULT: "hsl(var(--cream))",
