@@ -33,10 +33,10 @@ interface Props {
 
 const TryOnPhotoArea = ({
   userImage, showCamera, videoRef, fileInputRef, necklaces, selectedNecklace,
-  necklacePos, necklaceScale, isDragging, favorites, onToggleFavorite,
+  necklacePos, necklaceScale, necklaceRotation, necklaceOpacity, isDragging, favorites, onToggleFavorite,
   onOpenCamera, onCapture, onStopCamera,
   onMouseDown, onMouseMove, onMouseUp, onReset, onSelectTab, activeTab, onSelect,
-  onScaleChange,
+  onScaleChange, onRotationChange, onOpacityChange,
 }: Props) => {
   return (
     <div className="space-y-4">
