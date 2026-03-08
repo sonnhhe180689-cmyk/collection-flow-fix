@@ -200,7 +200,8 @@ const Collections = () => {
       </section>
 
       {/* Customer Feedback */}
-      <section className="py-20 bg-background">
+        <section className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${bgShowroom})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <div className="absolute inset-0 bg-card/70" />
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="section-title">Customer Feedback</h2>
