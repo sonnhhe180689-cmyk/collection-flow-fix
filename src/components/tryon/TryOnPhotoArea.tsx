@@ -119,14 +119,12 @@ const TryOnPhotoArea = ({
             {tab.icon} {tab.label}
           </button>
         ))}
-        {userImage && (
-          <button
-            onClick={onReset}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full font-body text-sm font-medium bg-card text-foreground border border-border hover:border-destructive/30 hover:text-destructive transition-all"
-          >
-            <RotateCcw className="w-4 h-4" /> Chụp Lại
-          </button>
-        )}
+        <button
+          onClick={onReset}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-full font-body text-sm font-medium bg-card text-foreground border border-border hover:border-destructive/30 hover:text-destructive transition-all"
+        >
+          <RotateCcw className="w-4 h-4" /> Đặt Lại
+        </button>
       </div>
     </div>
   );
