@@ -80,7 +80,7 @@ const Index = () => {
       </section>
 
       {/* Craftsmanship Banner - Video */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative h-[60vh] overflow-hidden mt-16">
         <img src={craftsmanship} alt="Nghệ thuật chế tác" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/60 flex items-center justify-center">
           <div className="text-center">
