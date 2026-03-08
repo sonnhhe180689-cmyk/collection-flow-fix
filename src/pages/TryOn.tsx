@@ -133,7 +133,7 @@ const TryOn = () => {
           <span className="block font-display text-5xl md:text-6xl font-bold italic text-primary mt-1" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.25)' }}>Trực Tuyến</span>
         </h1>
         <p className="font-body text-white/80 mt-4 relative z-10 text-base md:text-lg max-w-xl mx-auto" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.2)' }}>
-          Tải ảnh của bạn lên và xem thử các mẫu vòng cổ yêu thích ngay trên màn hình
+          Tải ảnh và chụp ảnh của bạn lên và xem thử các mẫu vòng cổ yêu thích ngay trên màn hình
         </p>
       </div>
       <div className="container mx-auto px-4 py-8">
