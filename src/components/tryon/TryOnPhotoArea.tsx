@@ -92,9 +92,6 @@ const TryOnPhotoArea = ({
 
             {/* Bottom buttons on photo */}
             <div className="absolute bottom-4 left-4 right-4 flex justify-center gap-3">
-              <button onClick={onReset} className="bg-card/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 text-sm font-body font-medium text-foreground shadow-md hover:bg-card transition-colors">
-                <Camera className="w-4 h-4" /> Chụp Lại
-              </button>
               <button onClick={() => onSelectTab("select")} className="bg-card/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 text-sm font-body font-medium text-foreground shadow-md hover:bg-card transition-colors">
                 <Search className="w-4 h-4" /> Chọn Vòng
               </button>
