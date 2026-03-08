@@ -6,8 +6,10 @@ interface Props {
   showCamera: boolean;
   videoRef: RefObject<HTMLVideoElement>;
   fileInputRef: RefObject<HTMLInputElement>;
-  necklaces: { image: string; nameVi: string }[];
+  necklaces: { id: number; image: string; name: string; nameVi: string; priceDisplay: string; category: string }[];
   selectedNecklace: number;
+  favorites: Set<number>;
+  onToggleFavorite: (id: number) => void;
   necklacePos: { x: number; y: number };
   necklaceScale: number;
   isDragging: boolean;
