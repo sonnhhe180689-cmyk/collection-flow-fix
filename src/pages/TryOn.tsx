@@ -105,6 +105,8 @@ const TryOn = () => {
     setUserImage(null);
     setNecklacePos({ x: 0, y: 0 });
     setNecklaceScale(1);
+    setNecklaceRotation(0);
+    setNecklaceOpacity(0.92);
   };
 
   const stopCamera = () => {
