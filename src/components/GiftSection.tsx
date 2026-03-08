@@ -2,6 +2,12 @@ import { ShoppingCart } from "lucide-react";
 import { gifts } from "@/data/gifts";
 import { useCart } from "@/context/CartContext";
 import { toast } from "@/hooks/use-toast";
+import mysteryGift1 from "@/assets/mystery-gift-1.jpg";
+import mysteryGift2 from "@/assets/mystery-gift-2.jpg";
+import mysteryGift3 from "@/assets/mystery-gift-3.jpg";
+import mysteryGift4 from "@/assets/mystery-gift-4.jpg";
+
+const mysteryImages = [mysteryGift1, mysteryGift2, mysteryGift3, mysteryGift4];
 
 const GiftSection = () => {
   const { addToCart } = useCart();
@@ -22,16 +28,13 @@ const GiftSection = () => {
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {gifts.map((gift) => (
+          {gifts.map((gift, index) => (
             <div key={gift.id} className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer hover:shadow-lg transition-all duration-300">
               <div className="overflow-hidden">
-                <img src={gift.image} alt={gift.nameVi} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img src={mysteryImages[index]} alt="Hộp quà bí ẩn" className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
               </div>
               <div className="p-4 text-center">
-                <h3 className="font-display text-lg font-semibold">{gift.name}</h3>
-                <p className="font-body text-xs text-muted-foreground mt-1">{gift.description}</p>
-                <p className="font-body text-primary text-sm font-medium mt-2">{gift.priceDisplay}</p>
-                <button onClick={() => handleAddToCart(gift)} className="btn-outline-gold text-xs mt-3 px-4 py-2">
+                <button onClick={() => handleAddToCart(gift)} className="btn-outline-gold text-xs px-4 py-2">
                   <ShoppingCart className="w-3 h-3 inline mr-1" /> Thêm Vào Giỏ
                 </button>
               </div>
