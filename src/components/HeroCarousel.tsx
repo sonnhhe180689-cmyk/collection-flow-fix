@@ -15,10 +15,10 @@ const slides = [
   },
   {
     image: hero2,
-    title: "TRANG SỨC\nCAO CẤP",
-    subtitle: "Chế tác tinh xảo, vẻ đẹp vĩnh cửu.",
-    cta: "Xem Bộ Sưu Tập",
-    link: "/bo-suu-tap",
+    title: "TRẢI NGHIỆM\nTHỬ VÒNG CỔ",
+    subtitle: "Thử vòng cổ trực tuyến ngay trên ảnh của bạn.",
+    cta: "Thử Vòng Cổ Ngay",
+    link: "/thu-vong-co",
   },
   {
     image: hero3,
