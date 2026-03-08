@@ -114,6 +114,9 @@ const Collections = () => {
       {/* Collections */}
       <section id="collections-grid" className="py-20 bg-cream">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="section-title">Bộ Sưu Tập Vòng Cổ</h2>
+          </div>
           <div className="flex flex-col md:flex-row items-center gap-4 mb-10 justify-center">
             <div className="relative w-full max-w-md">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
