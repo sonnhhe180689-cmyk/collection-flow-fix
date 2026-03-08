@@ -1,4 +1,4 @@
-import { Camera, Sparkles, Move, Download, ShoppingCart, CheckCircle } from "lucide-react";
+import { Camera, Sparkles, Heart, ShoppingCart, CheckCircle, SlidersHorizontal, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import guideBg1 from "@/assets/guide-bg-1.jpg";
 import guideBg2 from "@/assets/guide-bg-2.jpg";
@@ -11,33 +11,33 @@ const guideBgs = [guideBg1, guideBg2, guideBg3, guideBg4, guideBg5];
 const steps = [
   {
     icon: <Camera className="w-6 h-6" />,
-    title: "Bước 1: Tải Ảnh Lên",
-    desc: "Chọn một bức ảnh chân dung rõ nét của bạn. Ảnh nên chụp thẳng mặt, vùng cổ rõ ràng để có kết quả tốt nhất.",
-    tips: ["Sử dụng ảnh có độ phân giải cao", "Ánh sáng đều, không bị ngược sáng", "Vùng cổ không bị che khuất"],
+    title: "Bước 1: Chụp Ảnh Hoặc Tải Ảnh",
+    desc: "Bạn có thể chụp ảnh selfie trực tiếp bằng camera hoặc tải lên một bức ảnh chân dung có sẵn. Ảnh nên chụp thẳng mặt, vùng cổ rõ ràng để vòng cổ hiển thị chân thực nhất.",
+    tips: ["Nhấn \"Chụp Ảnh\" để mở camera selfie", "Nhấn \"Tải Ảnh\" để chọn ảnh từ thiết bị", "Nhấn \"Chụp Lại\" nếu muốn đổi ảnh khác"],
   },
   {
-    icon: <Sparkles className="w-6 h-6" />,
-    title: "Bước 2: Chọn Vòng Cổ",
-    desc: "Duyệt qua bộ sưu tập và chọn mẫu vòng cổ bạn muốn thử. Bạn có thể dùng nút mũi tên để chuyển đổi nhanh giữa các mẫu.",
-    tips: ["Xem trước nhiều mẫu để so sánh", "Chú ý màu sắc phù hợp với trang phục", "Thử các kiểu dáng khác nhau"],
+    icon: <Search className="w-6 h-6" />,
+    title: "Bước 2: Chọn Vòng Cổ Yêu Thích",
+    desc: "Nhấn nút \"Chọn Vòng\" để cuộn xuống phần Gợi Ý. Tại đây bạn có thể lọc theo phong cách (Cổ Điển, Cao Cấp, Hiện Đại, Đá Quý) và chọn màu sắc (Vàng, Bạc, Vàng Hồng) để tìm mẫu phù hợp.",
+    tips: ["Dùng bộ lọc để tìm nhanh theo phong cách", "Chọn màu vàng/bạc/vàng hồng phù hợp trang phục", "Nhấn vào ảnh sản phẩm để thử ngay trên ảnh"],
   },
   {
-    icon: <Move className="w-6 h-6" />,
-    title: "Bước 3: Di Chuyển & Điều Chỉnh",
-    desc: "Kéo vòng cổ đến vị trí phù hợp trên cổ của bạn. Sử dụng thanh trượt để phóng to hoặc thu nhỏ kích thước vòng.",
-    tips: ["Kéo thả để di chuyển vị trí", "Điều chỉnh kích thước cho vừa vặn", "Nhấn \"Đặt Lại\" nếu cần bắt đầu lại"],
+    icon: <SlidersHorizontal className="w-6 h-6" />,
+    title: "Bước 3: Điều Chỉnh Vị Trí & Kích Thước",
+    desc: "Kéo vòng cổ trên ảnh để di chuyển đến vị trí mong muốn. Nhấn \"Điều Chỉnh\" để mở thanh trượt chỉnh kích thước, góc xoay và độ trong suốt của vòng cổ.",
+    tips: ["Kéo thả vòng cổ trên ảnh để thay đổi vị trí", "Chỉnh kích thước từ 30% đến 200%", "Xoay vòng cổ và điều chỉnh độ trong suốt cho tự nhiên"],
   },
   {
-    icon: <Download className="w-6 h-6" />,
-    title: "Bước 4: Lưu & Chia Sẻ",
-    desc: "Khi hài lòng với kết quả, bạn có thể tải ảnh về máy để lưu giữ hoặc chia sẻ với bạn bè để lấy ý kiến.",
-    tips: ["Tải ảnh về để so sánh các mẫu", "Chia sẻ để nhờ bạn bè góp ý", "Lưu lại để tham khảo khi mua hàng"],
+    icon: <Heart className="w-6 h-6" />,
+    title: "Bước 4: Yêu Thích & So Sánh",
+    desc: "Nhấn biểu tượng ❤️ trên mỗi sản phẩm để lưu vào danh sách yêu thích. Các vòng cổ đã thích sẽ hiển thị ở cột bên phải, giúp bạn dễ dàng so sánh và chọn lại nhanh chóng.",
+    tips: ["Nhấn ❤️ trên ảnh sản phẩm để thêm yêu thích", "Nhấn vào vòng yêu thích để thử lại ngay", "So sánh nhiều mẫu trước khi quyết định"],
   },
   {
     icon: <ShoppingCart className="w-6 h-6" />,
-    title: "Bước 5: Đặt Hàng",
-    desc: "Khi đã chọn được mẫu ưng ý, thêm vào giỏ hàng và tiến hành đặt hàng. Chúng tôi sẽ giao hàng tận nơi cho bạn.",
-    tips: ["Kiểm tra kỹ thông tin sản phẩm", "Điền đúng địa chỉ giao hàng", "Liên hệ hotline nếu cần hỗ trợ"],
+    title: "Bước 5: Thêm Vào Giỏ Hàng",
+    desc: "Khi đã chọn được mẫu ưng ý, nhấn nút \"Thêm Vào Giỏ Hàng\" để đặt hàng. Giỏ hàng sẽ hiển thị ở góc trên bên phải màn hình.",
+    tips: ["Kiểm tra kỹ tên và giá sản phẩm", "Xem lại giỏ hàng trước khi thanh toán", "Liên hệ hotline nếu cần hỗ trợ thêm"],
   },
 ];
 
