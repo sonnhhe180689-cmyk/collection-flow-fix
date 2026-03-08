@@ -112,9 +112,14 @@ const Collections = () => {
         </div>
       </section>
 
-      {/* Collections */}
-      <section id="collections-grid" className="py-20 bg-cream">
+      {/* Collections - Gold Theme */}
+      <section id="collections-grid" className="py-20" style={{ background: 'linear-gradient(180deg, hsl(40 25% 95%) 0%, hsl(42 20% 97%) 50%, hsl(40 25% 95%) 100%)' }}>
         <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="font-body text-xs tracking-[0.35em] uppercase mb-3" style={{ color: 'hsl(40 50% 45%)' }}>Our Collection</p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">Bộ Sưu Tập <span className="italic" style={{ color: 'hsl(40 55% 45%)' }}>Vòng Cổ</span></h2>
+            <div className="w-16 h-[2px] mx-auto mt-4" style={{ background: 'linear-gradient(90deg, transparent, hsl(40 55% 50%), transparent)' }} />
+          </div>
           <div className="flex flex-col md:flex-row items-center gap-4 mb-10 justify-center">
             <div className="relative w-full max-w-md">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
