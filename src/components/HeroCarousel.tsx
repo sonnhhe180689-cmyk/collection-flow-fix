@@ -51,7 +51,7 @@ const HeroCarousel = () => {
   }, [next]);
 
   return (
-    <section className="relative w-full h-[90vh] overflow-hidden">
+    <section className="relative w-full h-[75vh] overflow-hidden">
       {/* Images */}
       {slides.map((slide, i) => (
         <div
