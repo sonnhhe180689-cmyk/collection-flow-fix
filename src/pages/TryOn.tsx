@@ -189,7 +189,7 @@ const TryOn = () => {
         </div>
 
         {/* Gợi Ý + Đổi Mẫu Vòng - side by side, equal height */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div id="suggestions-section" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <TryOnSuggestions
             necklaces={necklaces}
             selectedNecklace={selectedNecklace}
