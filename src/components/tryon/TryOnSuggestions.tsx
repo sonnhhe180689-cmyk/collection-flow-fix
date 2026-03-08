@@ -55,7 +55,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
             onClick={() => setActiveFilter(f.key)}
             className={`px-4 py-2 rounded-full font-body text-sm font-medium transition-all ${
               activeFilter === f.key
-                ? "gradient-gold text-primary-foreground shadow-sm"
+                ? "gradient-tiffany text-primary-foreground shadow-sm"
                 : "bg-secondary text-foreground hover:bg-accent"
             }`}
           >
