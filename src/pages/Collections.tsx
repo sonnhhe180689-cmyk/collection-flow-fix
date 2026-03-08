@@ -115,9 +115,11 @@ const Collections = () => {
       <section id="collections-grid" className="py-20 bg-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Bộ Sưu Tập Vòng Cổ</h2>
-            <p className="font-heading italic text-sm md:text-base tracking-[0.2em] uppercase text-muted-foreground mt-3">Khám phá vẻ đẹp tinh tế từ những thiết kế độc đáo</p>
-            <p className="font-heading italic text-sm text-muted-foreground mt-2">Chế tác thủ công từ nguyên liệu cao cấp hàng đầu</p>
+            <h2 className="section-title">Bộ Sưu Tập Vòng Cổ</h2>
+            <p className="section-subtitle">Khám phá vẻ đẹp tinh tế từ những thiết kế độc đáo</p>
+            <p className="font-body text-sm text-muted-foreground mt-4 max-w-xl mx-auto">
+              Chế tác thủ công từ nguyên liệu cao cấp hàng đầu
+            </p>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-4 mb-10 justify-center">
             <div className="relative w-full max-w-md">
