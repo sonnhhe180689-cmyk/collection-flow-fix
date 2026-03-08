@@ -18,7 +18,7 @@ const GiftSection = () => {
           <h2 className="section-title">Quà Tặng</h2>
           <p className="section-subtitle">Lựa Chọn 1 Món Quà Ngẫu Nhiên Dưới Đây</p>
           <p className="font-body text-sm text-muted-foreground mt-4 max-w-xl mx-auto">
-            Những món quà trang sức cao cấp hoàn hảo dành tặng người thân yêu trong những dịp đặc biệt
+            Tặng kèm 1 món quà nhỏ thay lời cảm ơn của Luna Jewel dành tới các khách hàng
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
