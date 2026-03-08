@@ -156,6 +156,10 @@ const TryOn = () => {
               activeTab={activeTab}
               onSelect={handleSelectNecklace}
               onScaleChange={setNecklaceScale}
+              necklaceRotation={necklaceRotation}
+              necklaceOpacity={necklaceOpacity}
+              onRotationChange={setNecklaceRotation}
+              onOpacityChange={setNecklaceOpacity}
             />
           </div>
 
