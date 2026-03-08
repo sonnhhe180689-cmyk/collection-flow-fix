@@ -108,18 +108,6 @@ const HeroCarousel = () => {
         <ChevronRight className="w-6 h-6 text-primary-foreground" />
       </button>
 
-      {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              i === current ? "bg-primary w-8" : "bg-primary-foreground/50"
-            }`}
-          />
-        ))}
-      </div>
     </section>
   );
 };
