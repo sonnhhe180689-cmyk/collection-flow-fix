@@ -196,14 +196,6 @@ const TryOn = () => {
           />
         </div>
 
-        {/* Đổi Mẫu Vòng - removed duplicate */}
-        <div className="mb-8">
-          <TryOnSidebar
-            necklaces={necklaces}
-            favorites={favorites}
-            onSelect={handleSelectNecklace}
-          />
-        </div>
 
         {/* Tips */}
         <TryOnTips />
