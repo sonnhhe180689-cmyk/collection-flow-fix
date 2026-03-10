@@ -58,11 +58,11 @@ const Contact = () => {
                   <div className="absolute inset-0 opacity-25 group-hover:opacity-55 transition-opacity duration-500" style={{
                     backgroundImage: `
                       radial-gradient(2px 2px at 15% 25%, hsl(var(--primary) / 0.5) 50%, transparent 50%),
-                      radial-gradient(1.5px 1.5px at 35% 65%, hsl(var(--tiffany-light) / 0.6) 50%, transparent 50%),
+                      radial-gradient(1.5px 1.5px at 35% 65%, hsl(var(--gold-light) / 0.6) 50%, transparent 50%),
                       radial-gradient(2px 2px at 55% 15%, hsl(var(--primary) / 0.4) 50%, transparent 50%),
-                      radial-gradient(1px 1px at 75% 45%, hsl(var(--tiffany-light) / 0.5) 50%, transparent 50%),
+                      radial-gradient(1px 1px at 75% 45%, hsl(var(--gold-light) / 0.5) 50%, transparent 50%),
                       radial-gradient(1.5px 1.5px at 90% 80%, hsl(var(--primary) / 0.45) 50%, transparent 50%),
-                      radial-gradient(1px 1px at 25% 90%, hsl(var(--tiffany-light) / 0.4) 50%, transparent 50%)
+                      radial-gradient(1px 1px at 25% 90%, hsl(var(--gold-light) / 0.4) 50%, transparent 50%)
                     `,
                     animation: 'sparkle-float 4s ease-in-out infinite alternate'
                   }} />
