@@ -94,7 +94,7 @@ const Guide = () => {
                 }} />
                 {/* Shimmer gradient overlay */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{
-                  background: 'linear-gradient(105deg, transparent 30%, hsl(var(--primary) / 0.08) 45%, hsl(var(--tiffany-light) / 0.12) 50%, hsl(var(--primary) / 0.08) 55%, transparent 70%)',
+                  background: 'linear-gradient(105deg, transparent 30%, hsl(var(--primary) / 0.08) 45%, hsl(var(--gold-light) / 0.12) 50%, hsl(var(--primary) / 0.08) 55%, transparent 70%)',
                   backgroundSize: '200% 100%',
                   animation: 'shimmer 2s ease-in-out infinite'
                 }} />
