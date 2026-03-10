@@ -129,7 +129,7 @@ const TryOnProductInfo = ({
       {/* Add to Cart */}
       <button
         onClick={onAddToCart}
-        className="w-full gradient-gold text-primary-foreground font-body font-semibold py-3 rounded-full text-sm hover:brightness-110 transition-all shadow-md"
+        className="w-full gradient-tiffany text-primary-foreground font-body font-semibold py-3 rounded-full text-sm hover:brightness-110 transition-all shadow-md"
       >
         🛒 Thêm Vào Giỏ Hàng — {necklace.priceDisplay}
       </button>

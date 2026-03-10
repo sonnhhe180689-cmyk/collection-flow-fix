@@ -52,11 +52,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
-          bg: "hsl(var(--gold-bg))",
+        tiffany: {
+          DEFAULT: "hsl(var(--tiffany))",
+          light: "hsl(var(--tiffany-light))",
+          dark: "hsl(var(--tiffany-dark))",
+          bg: "hsl(var(--tiffany-bg))",
         },
         cream: {
           DEFAULT: "hsl(var(--cream))",
