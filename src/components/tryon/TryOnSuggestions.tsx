@@ -31,10 +31,10 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
 
   const filters = [
     { key: "all", label: "Tất Cả" },
-    { key: "diamond", label: "Cổ Điển" },
+    { key: "pearl", label: "Cổ Điển" },
     { key: "luxury", label: "Cao Cấp" },
-    { key: "gold", label: "Hiện Đại" },
-    { key: "pearl", label: "Đá Quý" },
+    { key: "rosegold", label: "Hiện Đại" },
+    { key: "diamond", label: "Đá Quý" },
   ];
 
   const filtered = necklaces.filter((n) => {
@@ -55,7 +55,7 @@ const TryOnSuggestions = ({ necklaces, selectedNecklace, favorites, onSelect, on
             onClick={() => setActiveFilter(f.key)}
             className={`px-4 py-2 rounded-full font-body text-sm font-medium transition-all ${
               activeFilter === f.key
-                ? "gradient-tiffany text-primary-foreground shadow-sm"
+                ? "gradient-gold text-primary-foreground shadow-sm"
                 : "bg-secondary text-foreground hover:bg-accent"
             }`}
           >

@@ -125,7 +125,7 @@ const TryOn = () => {
   };
 
   return (
-    <div className="pt-16 min-h-screen" style={{ background: "linear-gradient(180deg, hsl(174 30% 95%) 0%, hsl(180 20% 99%) 100%)" }}>
+    <div className="pt-16 min-h-screen" style={{ background: "linear-gradient(180deg, hsl(42 30% 95%) 0%, hsl(40 20% 99%) 100%)" }}>
       {/* Header - full width */}
       <div className="text-center luxury-header py-20 md:py-28 px-4">
         <h1 className="relative z-10" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
