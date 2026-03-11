@@ -208,11 +208,7 @@ const TryOn = () => {
             onToggleFavorite={handleToggleFavorite}
             colorFilter={selectedColor}
           />
-          <TryOnSidebar
-            necklaces={necklaces}
-            favorites={favorites}
-            onSelect={handleSelectNecklace}
-          />
+          <TryOnSidebar />
         </div>
         {/* Tips */}
         <TryOnTips />
