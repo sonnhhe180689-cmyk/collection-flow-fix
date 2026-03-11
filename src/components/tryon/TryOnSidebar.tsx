@@ -21,7 +21,7 @@ const TryOnSidebar = () => {
 
         {/* Hero image */}
         <div className="rounded-xl overflow-hidden mb-4 shadow-md">
-          <img src={craftsmanship} alt="Craftsmanship" className="w-full h-40 object-cover" />
+          <img src={customOrder} alt="Đặt làm theo yêu cầu" className="w-full h-40 object-cover" />
         </div>
 
         <p className="font-body text-sm text-muted-foreground mb-4 leading-relaxed">
