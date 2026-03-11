@@ -1,6 +1,6 @@
 import { Gem, Palette, Ruler, MessageCircle, Sparkles } from "lucide-react";
 import bgShowroom from "@/assets/bg-showroom.png";
-import craftsmanship from "@/assets/craftsmanship.jpg";
+import customOrder from "@/assets/custom-order.png";
 
 const features = [
   { icon: <Gem className="w-5 h-5 text-primary" />, title: "Chọn Chất Liệu", desc: "Vàng 18K, Bạc 925, Platinum, Vàng Hồng" },
