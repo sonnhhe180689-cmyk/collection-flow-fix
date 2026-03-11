@@ -3,7 +3,7 @@ import bgShowroom from "@/assets/bg-showroom.png";
 import craftsmanship from "@/assets/craftsmanship.jpg";
 
 const features = [
-  { icon: <Gem className="w-5 h-5 text-primary" />, title: "Chọn Chất Liệu", desc: "Vàng 18K, Bạc 925, Platinum, Vàng Hồng" },
+  { icon: <Gem className="w-5 h-5 text-primary" />, title: "Chọn Chất Liệu", desc: "Tùy chọn chất liệu phù hợp với bạn" },
   { icon: <Palette className="w-5 h-5 text-primary" />, title: "Thiết Kế Riêng", desc: "Kiểu dáng độc quyền theo phong cách của bạn" },
   { icon: <Ruler className="w-5 h-5 text-primary" />, title: "Kích Thước Tùy Chỉnh", desc: "Đo và điều chỉnh vừa vặn hoàn hảo" },
 ];
