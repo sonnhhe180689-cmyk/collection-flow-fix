@@ -82,19 +82,19 @@ const Guide = () => {
                 <div className="absolute inset-0 opacity-30 group-hover:opacity-60 transition-opacity duration-500" style={{
                   backgroundImage: `
                     radial-gradient(2px 2px at 15% 25%, hsl(var(--primary) / 0.5) 50%, transparent 50%),
-                    radial-gradient(1.5px 1.5px at 35% 65%, hsl(var(--gold-light) / 0.6) 50%, transparent 50%),
+                    radial-gradient(1.5px 1.5px at 35% 65%, hsl(var(--tiffany-light) / 0.6) 50%, transparent 50%),
                     radial-gradient(2px 2px at 55% 15%, hsl(var(--primary) / 0.4) 50%, transparent 50%),
-                    radial-gradient(1px 1px at 75% 45%, hsl(var(--gold-light) / 0.5) 50%, transparent 50%),
+                    radial-gradient(1px 1px at 75% 45%, hsl(var(--tiffany-light) / 0.5) 50%, transparent 50%),
                     radial-gradient(1.5px 1.5px at 90% 80%, hsl(var(--primary) / 0.45) 50%, transparent 50%),
-                    radial-gradient(1px 1px at 25% 90%, hsl(var(--gold-light) / 0.4) 50%, transparent 50%),
+                    radial-gradient(1px 1px at 25% 90%, hsl(var(--tiffany-light) / 0.4) 50%, transparent 50%),
                     radial-gradient(2px 2px at 65% 75%, hsl(var(--primary) / 0.35) 50%, transparent 50%),
-                    radial-gradient(1.5px 1.5px at 45% 40%, hsl(var(--gold-light) / 0.5) 50%, transparent 50%)
+                    radial-gradient(1.5px 1.5px at 45% 40%, hsl(var(--tiffany-light) / 0.5) 50%, transparent 50%)
                   `,
                   animation: 'sparkle-float 4s ease-in-out infinite alternate'
                 }} />
                 {/* Shimmer gradient overlay */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{
-                  background: 'linear-gradient(105deg, transparent 30%, hsl(var(--primary) / 0.08) 45%, hsl(var(--gold-light) / 0.12) 50%, hsl(var(--primary) / 0.08) 55%, transparent 70%)',
+                  background: 'linear-gradient(105deg, transparent 30%, hsl(var(--primary) / 0.08) 45%, hsl(var(--tiffany-light) / 0.12) 50%, hsl(var(--primary) / 0.08) 55%, transparent 70%)',
                   backgroundSize: '200% 100%',
                   animation: 'shimmer 2s ease-in-out infinite'
                 }} />
@@ -140,11 +140,11 @@ const Guide = () => {
         <div className="absolute inset-0 opacity-30" style={{
           backgroundImage: `
             radial-gradient(2px 2px at 10% 20%, hsl(var(--primary) / 0.5) 50%, transparent 50%),
-            radial-gradient(1.5px 1.5px at 30% 70%, hsl(var(--gold-light) / 0.6) 50%, transparent 50%),
+            radial-gradient(1.5px 1.5px at 30% 70%, hsl(var(--tiffany-light) / 0.6) 50%, transparent 50%),
             radial-gradient(2px 2px at 50% 10%, hsl(var(--primary) / 0.4) 50%, transparent 50%),
-            radial-gradient(1px 1px at 70% 50%, hsl(var(--gold-light) / 0.5) 50%, transparent 50%),
+            radial-gradient(1px 1px at 70% 50%, hsl(var(--tiffany-light) / 0.5) 50%, transparent 50%),
             radial-gradient(1.5px 1.5px at 85% 85%, hsl(var(--primary) / 0.45) 50%, transparent 50%),
-            radial-gradient(1px 1px at 20% 85%, hsl(var(--gold-light) / 0.4) 50%, transparent 50%)
+            radial-gradient(1px 1px at 20% 85%, hsl(var(--tiffany-light) / 0.4) 50%, transparent 50%)
           `,
           animation: 'sparkle-float 4s ease-in-out infinite alternate'
         }} />
