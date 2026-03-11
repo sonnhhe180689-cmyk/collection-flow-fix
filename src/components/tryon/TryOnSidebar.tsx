@@ -1,6 +1,6 @@
 import { Gem, Palette, Ruler, MessageCircle, Sparkles } from "lucide-react";
 import bgShowroom from "@/assets/bg-showroom.png";
-import craftsmanship from "@/assets/craftsmanship.jpg";
+import customOrder from "@/assets/custom-order.png";
 
 const features = [
   { icon: <Gem className="w-5 h-5 text-primary" />, title: "Chọn Chất Liệu", desc: "Vàng 18K, Bạc 925, Platinum, Vàng Hồng" },
@@ -21,7 +21,7 @@ const TryOnSidebar = () => {
 
         {/* Hero image */}
         <div className="rounded-xl overflow-hidden mb-4 shadow-md">
-          <img src={craftsmanship} alt="Craftsmanship" className="w-full h-40 object-cover" />
+          <img src={customOrder} alt="Đặt làm theo yêu cầu" className="w-full h-40 object-cover" />
         </div>
 
         <p className="font-body text-sm text-muted-foreground mb-4 leading-relaxed">
