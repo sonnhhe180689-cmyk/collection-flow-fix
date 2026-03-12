@@ -3,7 +3,8 @@ import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { useFavorites } from "@/context/FavoritesContext";
 import { toast } from "@/hooks/use-toast";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import TryOnPhotoArea from "@/components/tryon/TryOnPhotoArea";
 import TryOnProductInfo from "@/components/tryon/TryOnProductInfo";
 
