@@ -39,9 +39,13 @@ const TryOn = () => {
   const { favorites, toggleFavorite } = useFavorites();
   const [searchParams] = useSearchParams();
 
+  const photoAreaRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (searchParams.get("camera") === "1" && !userImage && !showCamera) {
-      handleOpenCamera();
+    if (searchParams.get("camera") === "1") {
+      setTimeout(() => {
+        photoAreaRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 300);
     }
   }, []);
 
@@ -149,7 +153,7 @@ const TryOn = () => {
         {/* Main area: Photo + Product Info */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Left: Photo area */}
-          <div className="lg:col-span-2">
+          <div ref={photoAreaRef} className="lg:col-span-2">
             <TryOnPhotoArea
               userImage={userImage}
               showCamera={showCamera}
