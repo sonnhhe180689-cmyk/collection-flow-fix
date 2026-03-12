@@ -173,8 +173,13 @@ const Collections = () => {
                       <Heart className={`w-4 h-4 ${isFavorite(col.id) ? "fill-red-500" : ""}`} />
                     </button>
                     <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-4 py-2">
-                      <ShoppingCart className="w-3 h-3 inline mr-1" /> Thêm Vào Giỏ Hàng
+                      <ShoppingCart className="w-3 h-3 inline mr-1" /> Thêm Vào Giỏ
                     </button>
+                    <Link to="/thu-vong-co">
+                      <button className="btn-gold text-xs px-4 py-2">
+                        ✨ Thử Ngay
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
