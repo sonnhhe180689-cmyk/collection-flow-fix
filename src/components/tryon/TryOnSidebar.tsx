@@ -20,7 +20,7 @@ const TryOnSidebar = () => {
         </div>
 
         {/* Hero image */}
-        <div className="rounded-xl overflow-hidden mb-4 shadow-md">
+        <div className="rounded-xl overflow-hidden mb-4 shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.03] hover:brightness-110 cursor-default">
           <img src={craftsmanship} alt="Craftsmanship" className="w-full h-40 object-cover" />
         </div>
 
