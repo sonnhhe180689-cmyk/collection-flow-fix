@@ -39,9 +39,13 @@ const TryOn = () => {
   const { favorites, toggleFavorite } = useFavorites();
   const [searchParams] = useSearchParams();
 
+  const photoAreaRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (searchParams.get("camera") === "1" && !userImage && !showCamera) {
-      handleOpenCamera();
+    if (searchParams.get("camera") === "1") {
+      setTimeout(() => {
+        photoAreaRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 300);
     }
   }, []);
 
