@@ -41,9 +41,9 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {products.map((product) => (
               <div key={product.id} className="group cursor-pointer">
-                <div className="overflow-hidden rounded-lg bg-card">
+                <Link to="/thu-vong-co" className="block overflow-hidden rounded-lg bg-card">
                   <img src={product.image} alt={product.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
-                </div>
+                </Link>
                 <div className="mt-4 text-center">
                   <h3 className="font-display text-lg font-semibold">{product.name}</h3>
                   <p className="font-body text-primary text-sm font-medium mt-1">{product.priceDisplay}</p>

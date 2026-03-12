@@ -151,9 +151,9 @@ const Collections = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {displayedProducts.map((col) => (
               <div key={col.id} className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer relative">
-                <div className="overflow-hidden">
+                <Link to="/thu-vong-co" className="block overflow-hidden">
                   <img src={col.image} alt={col.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
-                </div>
+                </Link>
                 <div className="p-4 text-center">
                   <h3 className="font-display text-lg font-semibold">{col.name}</h3>
                   <p className="font-body text-xs text-muted-foreground">{col.nameVi}</p>
