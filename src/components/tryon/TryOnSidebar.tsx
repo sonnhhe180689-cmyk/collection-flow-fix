@@ -31,7 +31,7 @@ const TryOnSidebar = () => {
         {/* Features */}
         <div className="space-y-3 mb-5 flex-1">
           {features.map((f, i) => (
-            <div key={i} className="flex items-start gap-3 bg-card/70 rounded-xl p-3">
+            <div key={i} className="flex items-start gap-3 bg-card/70 rounded-xl p-3 transition-all duration-300 hover:bg-primary/15 hover:shadow-lg hover:scale-[1.03] cursor-default">
               <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                 {f.icon}
               </div>
