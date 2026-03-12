@@ -37,6 +37,13 @@ const TryOn = () => {
   const [showCamera, setShowCamera] = useState(false);
   const { addToCart } = useCart();
   const { favorites, toggleFavorite } = useFavorites();
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("camera") === "1" && !userImage && !showCamera) {
+      handleOpenCamera();
+    }
+  }, []);
 
   const necklaces = products.map((p) => ({
     id: p.id, name: p.name, nameVi: p.nameVi, price: p.price,
