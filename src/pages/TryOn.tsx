@@ -3,7 +3,8 @@ import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { useFavorites } from "@/context/FavoritesContext";
 import { toast } from "@/hooks/use-toast";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import TryOnPhotoArea from "@/components/tryon/TryOnPhotoArea";
 import TryOnProductInfo from "@/components/tryon/TryOnProductInfo";
 
@@ -36,6 +37,13 @@ const TryOn = () => {
   const [showCamera, setShowCamera] = useState(false);
   const { addToCart } = useCart();
   const { favorites, toggleFavorite } = useFavorites();
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("camera") === "1" && !userImage && !showCamera) {
+      handleOpenCamera();
+    }
+  }, []);
 
   const necklaces = products.map((p) => ({
     id: p.id, name: p.name, nameVi: p.nameVi, price: p.price,

@@ -175,7 +175,7 @@ const Collections = () => {
                     <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-4 py-2">
                       <ShoppingCart className="w-3 h-3 inline mr-1" /> Thêm Vào Giỏ
                     </button>
-                    <Link to="/thu-vong-co">
+                    <Link to="/thu-vong-co?camera=1">
                       <button className="btn-gold text-xs px-4 py-2">
                         ✨ Thử Ngay
                       </button>
