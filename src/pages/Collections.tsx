@@ -231,11 +231,11 @@ const Collections = () => {
             <h2 className="section-title">Phản Hồi Khách Hàng</h2>
             <p className="section-subtitle">Những Lời Đánh Giá Chân Thật</p>
           </div>
-          <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full max-w-2xl mx-auto">
+          <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full">
             <CarouselContent>
               {reviews.map((review, i) => (
-                <CarouselItem key={i} className="basis-full">
-                  <div className="text-center px-8">
+                <CarouselItem key={i} className="pl-4 basis-full md:basis-1/3">
+                  <div className="text-center px-4">
                     <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden border-2 border-primary/20">
                       <img src={review.avatar} alt={review.name} className="w-full h-full object-cover" />
                     </div>
