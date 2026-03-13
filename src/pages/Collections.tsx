@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Star, ShoppingCart, Search, ArrowRight, Heart } from "lucide-react";
+import { Star, ShoppingCart, Search, ArrowRight, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useFavorites } from "@/context/FavoritesContext";
 import { products } from "@/data/products";
@@ -11,6 +11,7 @@ import avatar3 from "@/assets/avatar-3.jpg";
 import bgShowroom from "@/assets/bg-showroom.png";
 import bgFeedback from "@/assets/bg-feedback.jpg";
 import GiftSection from "@/components/GiftSection";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const reviews = [
   { name: "Minh Thu", text: "\"Vòng cổ kim cương rất đẹp, sáng lấp lánh và nhẹ nhàng. Chắc chắn sẽ ghé lại lần nữa!\"", rating: 5, avatar: avatar1 },
