@@ -135,7 +135,7 @@ const Collections = () => {
               {categories.map((cat) => (
                 <button
                   key={cat.value}
-                  onClick={() => { setSelectedCategory(cat.value); setShowAll(false); }}
+                  onClick={() => { setSelectedCategory(cat.value); }}
                   className={`px-4 py-2 rounded-full text-xs font-body font-medium border transition-all ${
                     selectedCategory === cat.value
                       ? "bg-primary text-primary-foreground border-primary"
