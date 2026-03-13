@@ -19,7 +19,7 @@ const reviews = [
   { name: "Lan Anh", text: "\"Bộ sưu tập cao cấp rất quý phái. Vòng cổ đẹp nhất mà tôi từng sở hữu!\"", rating: 5, avatar: avatar3 },
 ];
 
-const INITIAL_COUNT = 4;
+
 
 const categories = [
   { label: "Tất Cả", value: "all" },
