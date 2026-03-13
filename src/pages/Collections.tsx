@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Star, ShoppingCart, Search, ArrowRight, Heart } from "lucide-react";
+import { Star, ShoppingCart, Search, ArrowRight, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useFavorites } from "@/context/FavoritesContext";
 import { products } from "@/data/products";
@@ -11,6 +11,7 @@ import avatar3 from "@/assets/avatar-3.jpg";
 import bgShowroom from "@/assets/bg-showroom.png";
 import bgFeedback from "@/assets/bg-feedback.jpg";
 import GiftSection from "@/components/GiftSection";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const reviews = [
   { name: "Minh Thu", text: "\"Vòng cổ kim cương rất đẹp, sáng lấp lánh và nhẹ nhàng. Chắc chắn sẽ ghé lại lần nữa!\"", rating: 5, avatar: avatar1 },
@@ -18,7 +19,7 @@ const reviews = [
   { name: "Lan Anh", text: "\"Bộ sưu tập cao cấp rất quý phái. Vòng cổ đẹp nhất mà tôi từng sở hữu!\"", rating: 5, avatar: avatar3 },
 ];
 
-const INITIAL_COUNT = 4;
+
 
 const categories = [
   { label: "Tất Cả", value: "all" },
@@ -31,7 +32,7 @@ const categories = [
 const Collections = () => {
   const [formData, setFormData] = useState({ name: "", email: "", review: "" });
   const [selectedRating, setSelectedRating] = useState(5);
-  const [showAll, setShowAll] = useState(false);
+  
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const { addToCart } = useCart();
@@ -59,8 +60,6 @@ const Collections = () => {
       p.nameVi.toLowerCase().includes(searchQuery.toLowerCase());
     return matchCategory && matchSearch;
   });
-
-  const displayedProducts = showAll ? filteredProducts : filteredProducts.slice(0, INITIAL_COUNT);
 
   return (
     <div className="pt-16">
@@ -136,7 +135,7 @@ const Collections = () => {
               {categories.map((cat) => (
                 <button
                   key={cat.value}
-                  onClick={() => { setSelectedCategory(cat.value); setShowAll(false); }}
+                  onClick={() => { setSelectedCategory(cat.value); }}
                   className={`px-4 py-2 rounded-full text-xs font-body font-medium border transition-all ${
                     selectedCategory === cat.value
                       ? "bg-primary text-primary-foreground border-primary"
@@ -148,40 +147,36 @@ const Collections = () => {
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {displayedProducts.map((col) => (
-              <div key={col.id} className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer relative">
-                <Link to="/thu-vong-co" className="block overflow-hidden">
-                  <img src={col.image} alt={col.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
-                </Link>
-                <div className="p-4 text-center">
-                  <h3 className="font-display text-lg font-semibold">{col.name}</h3>
-                  <p className="font-body text-xs text-muted-foreground">{col.nameVi}</p>
-                  <p className="font-body text-primary text-sm font-medium mt-1">{col.priceDisplay}</p>
-                  <div className="grid grid-cols-2 gap-2 mt-3">
-                    <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
-                      <ShoppingCart className="w-4 h-4" /> Thêm Vào Giỏ
-                    </button>
-                    <Link to="/thu-vong-co?camera=1" className="block">
-                      <button className="w-full h-full btn-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
-                        ✨ Thử Ngay
-                      </button>
+          <Carousel opts={{ align: "start", slidesToScroll: 2 }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {filteredProducts.map((col) => (
+                <CarouselItem key={col.id} className="pl-4 basis-1/2 md:basis-1/4">
+                  <div className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer relative h-full">
+                    <Link to="/thu-vong-co" className="block overflow-hidden">
+                      <img src={col.image} alt={col.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
                     </Link>
+                    <div className="p-4 text-center">
+                      <h3 className="font-display text-lg font-semibold">{col.name}</h3>
+                      <p className="font-body text-xs text-muted-foreground">{col.nameVi}</p>
+                      <p className="font-body text-primary text-sm font-medium mt-1">{col.priceDisplay}</p>
+                      <div className="grid grid-cols-2 gap-2 mt-3">
+                        <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
+                          <ShoppingCart className="w-4 h-4" /> Thêm Vào Giỏ
+                        </button>
+                        <Link to="/thu-vong-co?camera=1" className="block">
+                          <button className="w-full h-full btn-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
+                            ✨ Thử Ngay
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          {!showAll && filteredProducts.length > INITIAL_COUNT && (
-            <div className="text-center mt-10">
-              <button onClick={() => setShowAll(true)} className="btn-gold text-sm">Xem Thêm</button>
-            </div>
-          )}
-          {showAll && (
-            <div className="text-center mt-10">
-              <button onClick={() => setShowAll(false)} className="btn-gold text-sm">Thu Gọn</button>
-            </div>
-          )}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 bg-card border-border" />
+            <CarouselNext className="-right-4 bg-card border-border" />
+          </Carousel>
         </div>
       </section>
 
@@ -236,22 +231,28 @@ const Collections = () => {
             <h2 className="section-title">Phản Hồi Khách Hàng</h2>
             <p className="section-subtitle">Những Lời Đánh Giá Chân Thật</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {reviews.map((review, i) => (
-              <div key={i} className="text-center">
-                <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden border-2 border-primary/20">
-                  <img src={review.avatar} alt={review.name} className="w-full h-full object-cover" />
-                </div>
-                <div className="flex justify-center gap-1 mb-3">
-                  {Array.from({ length: review.rating }).map((_, j) => (
-                    <Star key={j} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <h3 className="font-display text-xl font-semibold mb-2">{review.name}</h3>
-                <p className="font-body text-sm text-muted-foreground italic leading-relaxed">{review.text}</p>
-              </div>
-            ))}
-          </div>
+          <Carousel opts={{ align: "start", slidesToScroll: 1 }} className="w-full max-w-2xl mx-auto">
+            <CarouselContent>
+              {reviews.map((review, i) => (
+                <CarouselItem key={i} className="basis-full">
+                  <div className="text-center px-8">
+                    <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden border-2 border-primary/20">
+                      <img src={review.avatar} alt={review.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex justify-center gap-1 mb-3">
+                      {Array.from({ length: review.rating }).map((_, j) => (
+                        <Star key={j} className="w-5 h-5 fill-primary text-primary" />
+                      ))}
+                    </div>
+                    <h3 className="font-display text-xl font-semibold mb-2">{review.name}</h3>
+                    <p className="font-body text-sm text-muted-foreground italic leading-relaxed">{review.text}</p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 bg-card border-border" />
+            <CarouselNext className="-right-4 bg-card border-border" />
+          </Carousel>
         </div>
       </section>
 
