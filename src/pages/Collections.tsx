@@ -147,40 +147,36 @@ const Collections = () => {
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {displayedProducts.map((col) => (
-              <div key={col.id} className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer relative">
-                <Link to="/thu-vong-co" className="block overflow-hidden">
-                  <img src={col.image} alt={col.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
-                </Link>
-                <div className="p-4 text-center">
-                  <h3 className="font-display text-lg font-semibold">{col.name}</h3>
-                  <p className="font-body text-xs text-muted-foreground">{col.nameVi}</p>
-                  <p className="font-body text-primary text-sm font-medium mt-1">{col.priceDisplay}</p>
-                  <div className="grid grid-cols-2 gap-2 mt-3">
-                    <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
-                      <ShoppingCart className="w-4 h-4" /> Thêm Vào Giỏ
-                    </button>
-                    <Link to="/thu-vong-co?camera=1" className="block">
-                      <button className="w-full h-full btn-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
-                        ✨ Thử Ngay
-                      </button>
+          <Carousel opts={{ align: "start", slidesToScroll: 2 }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {filteredProducts.map((col) => (
+                <CarouselItem key={col.id} className="pl-4 basis-1/2 md:basis-1/4">
+                  <div className="bg-card rounded-lg overflow-hidden shadow-sm group cursor-pointer relative h-full">
+                    <Link to="/thu-vong-co" className="block overflow-hidden">
+                      <img src={col.image} alt={col.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
                     </Link>
+                    <div className="p-4 text-center">
+                      <h3 className="font-display text-lg font-semibold">{col.name}</h3>
+                      <p className="font-body text-xs text-muted-foreground">{col.nameVi}</p>
+                      <p className="font-body text-primary text-sm font-medium mt-1">{col.priceDisplay}</p>
+                      <div className="grid grid-cols-2 gap-2 mt-3">
+                        <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
+                          <ShoppingCart className="w-4 h-4" /> Thêm Vào Giỏ
+                        </button>
+                        <Link to="/thu-vong-co?camera=1" className="block">
+                          <button className="w-full h-full btn-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
+                            ✨ Thử Ngay
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          {!showAll && filteredProducts.length > INITIAL_COUNT && (
-            <div className="text-center mt-10">
-              <button onClick={() => setShowAll(true)} className="btn-gold text-sm">Xem Thêm</button>
-            </div>
-          )}
-          {showAll && (
-            <div className="text-center mt-10">
-              <button onClick={() => setShowAll(false)} className="btn-gold text-sm">Thu Gọn</button>
-            </div>
-          )}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 bg-card border-border" />
+            <CarouselNext className="-right-4 bg-card border-border" />
+          </Carousel>
         </div>
       </section>
 
