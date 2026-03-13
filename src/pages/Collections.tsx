@@ -158,25 +158,12 @@ const Collections = () => {
                   <h3 className="font-display text-lg font-semibold">{col.name}</h3>
                   <p className="font-body text-xs text-muted-foreground">{col.nameVi}</p>
                   <p className="font-body text-primary text-sm font-medium mt-1">{col.priceDisplay}</p>
-                  <div className="flex items-center justify-center gap-2 mt-3">
-                    <button
-                      onClick={() => {
-                        toggleFavorite(col.id);
-                        toast({ title: isFavorite(col.id) ? `Đã bỏ ${col.nameVi} khỏi yêu thích` : `❤️ Đã thêm ${col.nameVi} vào yêu thích!` });
-                      }}
-                      className={`p-2 rounded-full border transition-all ${
-                        isFavorite(col.id)
-                          ? "border-red-400 bg-red-50 text-red-500"
-                          : "border-border text-muted-foreground hover:border-red-300 hover:text-red-400"
-                      }`}
-                    >
-                      <Heart className={`w-4 h-4 ${isFavorite(col.id) ? "fill-red-500" : ""}`} />
+                  <div className="grid grid-cols-2 gap-2 mt-3">
+                    <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
+                      <ShoppingCart className="w-4 h-4" /> Thêm Vào Giỏ
                     </button>
-                    <button onClick={() => handleAddToCart(col)} className="btn-outline-gold text-xs px-4 py-2">
-                      <ShoppingCart className="w-3 h-3 inline mr-1" /> Thêm Vào Giỏ
-                    </button>
-                    <Link to="/thu-vong-co?camera=1">
-                      <button className="btn-gold text-xs px-4 py-2">
+                    <Link to="/thu-vong-co?camera=1" className="block">
+                      <button className="w-full h-full btn-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
                         ✨ Thử Ngay
                       </button>
                     </Link>
