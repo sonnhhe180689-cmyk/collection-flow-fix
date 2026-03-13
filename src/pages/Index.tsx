@@ -47,12 +47,12 @@ const Index = () => {
                 <div className="mt-4 text-center">
                   <h3 className="font-display text-lg font-semibold">{product.name}</h3>
                   <p className="font-body text-primary text-sm font-medium mt-1">{product.priceDisplay}</p>
-                  <div className="flex items-center gap-2 justify-center flex-wrap">
-                    <button onClick={() => handleAddToCart(product)} className="btn-outline-gold text-xs px-4 py-2">
-                      <ShoppingCart className="w-3 h-3 inline mr-1" /> Thêm Vào Giỏ
+                  <div className="grid grid-cols-2 gap-2 mt-1">
+                    <button onClick={() => handleAddToCart(product)} className="btn-outline-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
+                      <ShoppingCart className="w-4 h-4" /> Thêm Vào Giỏ
                     </button>
-                    <Link to="/thu-vong-co?camera=1">
-                      <button className="btn-gold text-xs px-4 py-2">
+                    <Link to="/thu-vong-co?camera=1" className="block">
+                      <button className="w-full h-full btn-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
                         ✨ Thử Ngay
                       </button>
                     </Link>
