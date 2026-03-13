@@ -32,7 +32,7 @@ const categories = [
 const Collections = () => {
   const [formData, setFormData] = useState({ name: "", email: "", review: "" });
   const [selectedRating, setSelectedRating] = useState(5);
-  const [showAll, setShowAll] = useState(false);
+  
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const { addToCart } = useCart();
