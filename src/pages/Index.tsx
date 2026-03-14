@@ -11,10 +11,10 @@ import { toast } from "@/hooks/use-toast";
 import { useState } from "react";
 
 const services = [
-  { title: "Đặt lịch hẹn", desc: "Nắm vững nghệ thuật tặng quà mùa lễ hội với cuộc hẹn riêng tại cửa hàng.", cta: "Đặt Lịch Hẹn", link: "/lien-he", image: serviceAppointment },
-  { title: "Cá nhân hóa", desc: "Hãy làm cho thiết kế trở nên đáng nhớ hơn nữa với dịch vụ khắc laser theo yêu cầu.", cta: "Tìm Hiểu Thêm", link: "/huong-dan", image: servicePersonalize },
-  { title: "Liên hệ với chúng tôi", desc: "Từ tư vấn quà tặng phù hợp đến việc sắp xếp cuộc hẹn mua sắm, chúng tôi luôn sẵn sàng.", cta: "Tìm Hiểu Thêm", link: "/lien-he", image: serviceContact },
-];
+{ title: "Đặt lịch hẹn", desc: "Nắm vững nghệ thuật tặng quà mùa lễ hội với cuộc hẹn riêng tại cửa hàng.", cta: "Đặt Lịch Hẹn", link: "/lien-he", image: serviceAppointment },
+{ title: "Cá nhân hóa", desc: "Hãy làm cho thiết kế trở nên đáng nhớ hơn nữa với dịch vụ khắc laser theo yêu cầu.", cta: "Tìm Hiểu Thêm", link: "/huong-dan", image: servicePersonalize },
+{ title: "Liên hệ với chúng tôi", desc: "Từ tư vấn quà tặng phù hợp đến việc sắp xếp cuộc hẹn mua sắm, chúng tôi luôn sẵn sàng.", cta: "Tìm Hiểu Thêm", link: "/lien-he", image: serviceContact }];
+
 
 const YOUTUBE_VIDEO_ID = "JfXqt9WUPrs";
 
@@ -39,8 +39,8 @@ const Index = () => {
             <p className="section-subtitle">Những Thiết Kế Được Yêu Thích Nhất</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {products.map((product) => (
-              <div key={product.id} className="group cursor-pointer">
+            {products.map((product) =>
+            <div key={product.id} className="group cursor-pointer">
                 <Link to="/thu-vong-co" className="block overflow-hidden rounded-lg bg-card">
                   <img src={product.image} alt={product.name} className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" />
                 </Link>
@@ -52,14 +52,14 @@ const Index = () => {
                       <ShoppingCart className="w-4 h-4" /> Thêm Vào Giỏ
                     </button>
                     <Link to="/thu-vong-co?camera=1" className="block">
-                      <button className="w-full h-full btn-gold text-xs px-3 py-3 flex flex-col items-center justify-center gap-1">
+                      <button className="w-full h-full btn-gold text-xs py-3 flex flex-col items-center justify-center gap-1 px-[11px]">
                         ✨ Thử Ngay
                       </button>
                     </Link>
                   </div>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -69,19 +69,19 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: "💎", title: "Chất Lượng Cao Cấp", desc: "Nguyên liệu thật 100%, được chứng nhận bởi các tổ chức uy tín" },
-              { icon: "🚚", title: "Giao Hàng Toàn Quốc", desc: "Miễn phí ship cho đơn hàng từ 2.000.000đ, giao trong 2-5 ngày" },
-              { icon: "🛡️", title: "Bảo Hành Trọn Đời", desc: "Cam kết đổi trả trong 30 ngày, bảo hành miễn phí trọn đời" },
-              { icon: "✨", title: "Thử Trước Khi Mua", desc: "Công nghệ thử vòng cổ 2D độc đáo, xem ngay trên ảnh của bạn" },
-            ].map((feature, i) => (
-              <div key={i} className="text-center">
+            { icon: "💎", title: "Chất Lượng Cao Cấp", desc: "Nguyên liệu thật 100%, được chứng nhận bởi các tổ chức uy tín" },
+            { icon: "🚚", title: "Giao Hàng Toàn Quốc", desc: "Miễn phí ship cho đơn hàng từ 2.000.000đ, giao trong 2-5 ngày" },
+            { icon: "🛡️", title: "Bảo Hành Trọn Đời", desc: "Cam kết đổi trả trong 30 ngày, bảo hành miễn phí trọn đời" },
+            { icon: "✨", title: "Thử Trước Khi Mua", desc: "Công nghệ thử vòng cổ 2D độc đáo, xem ngay trên ảnh của bạn" }].
+            map((feature, i) =>
+            <div key={i} className="text-center">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">{feature.icon}</span>
                 </div>
                 <h3 className="font-display text-lg font-semibold italic mb-2">{feature.title}</h3>
                 <p className="font-body text-xs text-muted-foreground leading-relaxed">{feature.desc}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -95,8 +95,8 @@ const Index = () => {
             <p className="font-body text-sm tracking-[0.3em] uppercase text-primary-foreground/80 mt-3">Tạo tác tinh xảo từng chi tiết</p>
             <button
               onClick={() => setShowVideo(true)}
-              className="mt-8 w-16 h-16 rounded-full border-2 border-primary-foreground/60 flex items-center justify-center mx-auto hover:border-primary-foreground hover:bg-primary-foreground/20 transition-all"
-            >
+              className="mt-8 w-16 h-16 rounded-full border-2 border-primary-foreground/60 flex items-center justify-center mx-auto hover:border-primary-foreground hover:bg-primary-foreground/20 transition-all">
+              
               <Play className="w-6 h-6 text-primary-foreground ml-1" />
             </button>
           </div>
@@ -104,22 +104,22 @@ const Index = () => {
       </section>
 
       {/* Video Modal */}
-      {showVideo && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-foreground/80 backdrop-blur-sm" onClick={() => setShowVideo(false)}>
+      {showVideo &&
+      <div className="fixed inset-0 z-[70] flex items-center justify-center bg-foreground/80 backdrop-blur-sm" onClick={() => setShowVideo(false)}>
           <div className="relative w-full max-w-4xl mx-4 aspect-video" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setShowVideo(false)} className="absolute -top-10 right-0 text-primary-foreground hover:text-primary transition-colors">
               <X className="w-8 h-8" />
             </button>
             <iframe
-              className="w-full h-full rounded-xl"
-              src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`}
-              title="Nghệ Thuật Chế Tác Vòng Cổ"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            className="w-full h-full rounded-xl"
+            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`}
+            title="Nghệ Thuật Chế Tác Vòng Cổ"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen />
+          
           </div>
         </div>
-      )}
+      }
 
       {/* Story Section */}
       <section className="py-20 bg-background">
@@ -147,8 +147,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center mb-12">Dịch Vụ Của Chúng Tôi</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <div key={i} className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            {services.map((service, i) =>
+            <div key={i} className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="h-48 overflow-hidden">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
                 </div>
@@ -160,7 +160,7 @@ const Index = () => {
                   </Link>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -179,8 +179,8 @@ const Index = () => {
           </Link>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Index;
