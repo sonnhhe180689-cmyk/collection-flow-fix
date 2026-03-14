@@ -52,7 +52,7 @@ const Index = () => {
                       <ShoppingCart className="w-4 h-4" /> Thêm Vào Giỏ
                     </button>
                     <Link to="/thu-vong-co?camera=1" className="block">
-                      <button className="w-full h-full btn-gold text-xs py-3 flex flex-col items-center justify-center gap-1 px-[11px]">
+                      <button className="w-full h-full btn-gold text-xs py-3 flex flex-col items-center justify-center gap-1 px-[12px]">
                         ✨ Thử Ngay
                       </button>
                     </Link>
